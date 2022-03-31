@@ -1,0 +1,1585 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuites disabled="0" errors="0" failures="1" skipped="0" tests="1" time="0.008009195327758789"><testsuite disabled="0" errors="0" failures="1" skipped="0" tests="1" time="0.008009195327758789"><testcase name="inputs/test-core-reg.input" status="failed" time="0.025475263595581055"><failure type="failure">./a.out &lt; inputs/test-core-reg.input
+
+!!! output is incorrect:
+diff inputs/test-core-reg.actual inputs/test-core-reg.expected7,26c7,57
+&lt;   4236: 40658533      4240: 40858533      4244: 00a342b3    xor     zero, a0, t1            zero &lt;- -1972
+&lt;   4248: 009342b3    xor     zero, s1, t1            zero &lt;- 350
+&lt;   4252: 40b00333      4256: 40a004b3      4260: 40500433      4264: 40800333      4268: 005282b3      4272: 0092e333    or      zero, s1, t0            zero &lt;- -525
+&lt;   4276: 00b57433    and     zero, a1, a0            zero &lt;- 65
+&lt;   4280: 006505b3      4284: 00b4c4b3    xor     zero, a1, s1            zero &lt;- 168
+&lt;   4288: 00846433    or      zero, s0, s0            zero &lt;- 929
+&lt;   4292: 0095c5b3    xor     zero, s1, a1            zero &lt;- 168
+&lt;   4296: 005374b3    and     zero, t0, t1            zero &lt;- -1917
+&lt;   4300: 00950333      4304: 406485b3      4308: 406002b3      4312: 405584b3      4316: 0095f2b3    and     zero, s1, a1            zero &lt;- -1711
+&lt;   4320: 00b2f433    and     zero, a1, t0            zero &lt;- -1999
+&lt;   4324: 40958533      4328: 409005b3      4332: 005544b3    xor     zero, t0, a0            zero &lt;- -912
+&lt;   4336: 40940333      4340: 00940533      4344: 40b002b3      4348: 40a00433      4352: 409002b3      4356: 00a34333    xor     zero, a0, t1            zero &lt;- -1972
+&lt;   4360: 40840333      4364: 405282b3      4368: 00557333    and     zero, t0, a0            zero &lt;- 131
+&lt;   4372: 0094c533    xor     zero, s1, s1            zero &lt;- 0
+&lt;   4376: 00b345b3    xor     zero, a1, t1            zero &lt;- 502
+&lt;   4380: 405302b3      4384: 00950533      4388: 005284b3      4392: 40a48533      4396: 406302b3      4400: 40b482b3      4404: 0065e533    or      zero, t1, a1            zero &lt;- -1537
+&lt;   4408: 006574b3    and     zero, t1, a0            zero &lt;- 131
+&lt;   4412: 00b58533      4416: 00a404b3      4420: 005365b3    or      zero, t0, t1            zero &lt;- -833
+&lt;   4424: 0052c433    xor     zero, t0, t0            zero &lt;- 0
+&lt;   4428: 00828333      4432: 006402b3      4436: e8e00513    li      a0, -370                a0 &lt;- -370
+---
+&gt;   4236: 40658533    sub     a0, a1, t1              a0 &lt;- 234
+&gt;   4240: 40858533    sub     a0, a1, s0              a0 &lt;- -2600
+&gt;   4244: 00a342b3    xor     t0, t1, a0              t0 &lt;- 3415
+&gt;   4248: 009342b3    xor     t0, t1, s1              t0 &lt;- 350
+&gt;   4252: 40b00333    neg     t1, a1                  t1 &lt;- 1671
+&gt;   4256: 40a004b3    neg     s1, a0                  s1 &lt;- 2600
+&gt;   4260: 40500433    neg     s0, t0                  s0 &lt;- -350
+&gt;   4264: 40800333    neg     t1, s0                  t1 &lt;- 350
+&gt;   4268: 005282b3    add     t0, t0, t0              t0 &lt;- 700
+&gt;   4272: 0092e333    or      t1, t0, s1              t1 &lt;- 2748
+&gt;   4276: 00b57433    and     s0, a0, a1              s0 &lt;- -3752
+&gt;   4280: 006505b3    add     a1, a0, t1              a1 &lt;- 148
+&gt;   4284: 00b4c4b3    xor     s1, s1, a1              s1 &lt;- 2748
+&gt;   4288: 00846433    or      s0, s0, s0              s0 &lt;- -3752
+&gt;   4292: 0095c5b3    xor     a1, a1, s1              a1 &lt;- 2600
+&gt;   4296: 005374b3    and     s1, t1, t0              s1 &lt;- 700
+&gt;   4300: 00950333    add     t1, a0, s1              t1 &lt;- -1900
+&gt;   4304: 406485b3    sub     a1, s1, t1              a1 &lt;- 2600
+&gt;   4308: 406002b3    neg     t0, t1                  t0 &lt;- 1900
+&gt;   4312: 405584b3    sub     s1, a1, t0              s1 &lt;- 700
+&gt;   4316: 0095f2b3    and     t0, a1, s1              t0 &lt;- 552
+&gt;   4320: 00b2f433    and     s0, t0, a1              s0 &lt;- 552
+&gt;   4324: 40958533    sub     a0, a1, s1              a0 &lt;- 1900
+&gt;   4328: 409005b3    neg     a1, s1                  a1 &lt;- -700
+&gt;   4332: 005544b3    xor     s1, a0, t0              s1 &lt;- 1348
+&gt;   4336: 40940333    sub     t1, s0, s1              t1 &lt;- -796
+&gt;   4340: 00940533    add     a0, s0, s1              a0 &lt;- 1900
+&gt;   4344: 40b002b3    neg     t0, a1                  t0 &lt;- 700
+&gt;   4348: 40a00433    neg     s0, a0                  s0 &lt;- -1900
+&gt;   4352: 409002b3    neg     t0, s1                  t0 &lt;- -1348
+&gt;   4356: 00a34333    xor     t1, t1, a0              t1 &lt;- -1144
+&gt;   4360: 40840333    sub     t1, s0, s0              t1 &lt;- 0
+&gt;   4364: 405282b3    sub     t0, t0, t0              t0 &lt;- 0
+&gt;   4368: 00557333    and     t1, a0, t0              t1 &lt;- 0
+&gt;   4372: 0094c533    xor     a0, s1, s1              a0 &lt;- 0
+&gt;   4376: 00b345b3    xor     a1, t1, a1              a1 &lt;- -700
+&gt;   4380: 405302b3    sub     t0, t1, t0              t0 &lt;- 0
+&gt;   4384: 00950533    add     a0, a0, s1              a0 &lt;- 1348
+&gt;   4388: 005284b3    add     s1, t0, t0              s1 &lt;- 0
+&gt;   4392: 40a48533    sub     a0, s1, a0              a0 &lt;- -1348
+&gt;   4396: 406302b3    sub     t0, t1, t1              t0 &lt;- 0
+&gt;   4400: 40b482b3    sub     t0, s1, a1              t0 &lt;- 700
+&gt;   4404: 0065e533    or      a0, a1, t1              a0 &lt;- -700
+&gt;   4408: 006574b3    and     s1, a0, t1              s1 &lt;- 0
+&gt;   4412: 00b58533    add     a0, a1, a1              a0 &lt;- -1400
+&gt;   4416: 00a404b3    add     s1, s0, a0              s1 &lt;- -3300
+&gt;   4420: 005365b3    or      a1, t1, t0              a1 &lt;- 700
+&gt;   4424: 0052c433    xor     s0, t0, t0              s0 &lt;- 0
+&gt;   4428: 00828333    add     t1, t0, s0              t1 &lt;- 700
+&gt;   4432: 006402b3    add     t0, s0, t1              t0 &lt;- 700
+&gt;   4436: e8e00513    li      a0, -370                a0 &lt;- -370
+32,61c63,112
+&lt;   4460: 0095f333    and     zero, s1, a1            zero &lt;- -1215
+&lt;   4464: 0094f4b3    and     zero, s1, s1            zero &lt;- -1207
+&lt;   4468: 008464b3    or      zero, s0, s0            zero &lt;- 1563
+&lt;   4472: 00a34533    xor     zero, a0, t1            zero &lt;- -1849
+&lt;   4476: 00650533      4480: 40948533      4484: 00540333      4488: 00a4e2b3    or      zero, a0, s1            zero &lt;- -49
+&lt;   4492: 406004b3      4496: 00630433      4500: 00b302b3      4504: 0084c5b3    xor     zero, s0, s1            zero &lt;- -686
+&lt;   4508: 40b50333      4512: 00854333    xor     zero, s0, a0            zero &lt;- -1899
+&lt;   4516: 405305b3      4520: 40a004b3      4524: 405282b3      4528: 00654333    xor     zero, t1, a0            zero &lt;- -1849
+&lt;   4532: 00948433      4536: 00644533    xor     zero, t1, s0            zero &lt;- 82
+&lt;   4540: 008544b3    xor     zero, s0, a0            zero &lt;- -1899
+&lt;   4544: 00b57533    and     zero, a1, a0            zero &lt;- -382
+&lt;   4548: 0065f433    and     zero, t1, a1            zero &lt;- 1601
+&lt;   4552: 0064f333    and     zero, t1, s1            zero &lt;- 585
+&lt;   4556: 00b5f333    and     zero, a1, a1            zero &lt;- -13
+&lt;   4560: 40b005b3      4564: 008445b3    xor     zero, s0, s0            zero &lt;- 0
+&lt;   4568: 40a002b3      4572: 00b2f5b3    and     zero, a1, t0            zero &lt;- 817
+&lt;   4576: 40b48533      4580: 009482b3      4584: 0065c5b3    xor     zero, t1, a1            zero &lt;- -1606
+&lt;   4588: 40900533      4592: 0085e4b3    or      zero, s0, a1            zero &lt;- -5
+&lt;   4596: 009465b3    or      zero, s1, s0            zero &lt;- -165
+&lt;   4600: 405305b3      4604: 00b2f5b3    and     zero, a1, t0            zero &lt;- 817
+&lt;   4608: 00556533    or      zero, t0, a0            zero &lt;- -65
+&lt;   4612: 40828433      4616: 00654433    xor     zero, t1, a0            zero &lt;- -1849
+&lt;   4620: 0082c433    xor     zero, s0, t0            zero &lt;- 1314
+&lt;   4624: 00b57433    and     zero, a1, a0            zero &lt;- -382
+&lt;   4628: 406002b3      4632: 00a4f4b3    and     zero, a0, s1            zero &lt;- -1528
+&lt;   4636: 00944433    xor     zero, s1, s0            zero &lt;- -686
+&lt;   4640: 40500333      4644: 00b5e2b3    or      zero, a1, a1            zero &lt;- -13
+&lt;   4648: 00a34433    xor     zero, a0, t1            zero &lt;- -1849
+&lt;   4652: 0085e433    or      zero, s0, a1            zero &lt;- -5
+&lt;   4656: 009342b3    xor     zero, s1, t1            zero &lt;- -768
+---
+&gt;   4460: 0095f333    and     t1, a1, s1              t1 &lt;- -1215
+&gt;   4464: 0094f4b3    and     s1, s1, s1              s1 &lt;- -1207
+&gt;   4468: 008464b3    or      s1, s0, s0              s1 &lt;- 1563
+&gt;   4472: 00a34533    xor     a0, t1, a0              a0 &lt;- 1487
+&gt;   4476: 00650533    add     a0, a0, t1              a0 &lt;- 272
+&gt;   4480: 40948533    sub     a0, s1, s1              a0 &lt;- 0
+&gt;   4484: 00540333    add     t1, s0, t0              t1 &lt;- 2388
+&gt;   4488: 00a4e2b3    or      t0, s1, a0              t0 &lt;- 1563
+&gt;   4492: 406004b3    neg     s1, t1                  s1 &lt;- -2388
+&gt;   4496: 00630433    add     s0, t1, t1              s0 &lt;- 4776
+&gt;   4500: 00b302b3    add     t0, t1, a1              t0 &lt;- 2375
+&gt;   4504: 0084c5b3    xor     a1, s1, s0              a1 &lt;- -7164
+&gt;   4508: 40b50333    sub     t1, a0, a1              t1 &lt;- 7164
+&gt;   4512: 00854333    xor     t1, a0, s0              t1 &lt;- 4776
+&gt;   4516: 405305b3    sub     a1, t1, t0              a1 &lt;- 2401
+&gt;   4520: 40a004b3    neg     s1, a0                  s1 &lt;- 0
+&gt;   4524: 405282b3    sub     t0, t0, t0              t0 &lt;- 0
+&gt;   4528: 00654333    xor     t1, a0, t1              t1 &lt;- 4776
+&gt;   4532: 00948433    add     s0, s1, s1              s0 &lt;- 0
+&gt;   4536: 00644533    xor     a0, s0, t1              a0 &lt;- 4776
+&gt;   4540: 008544b3    xor     s1, a0, s0              s1 &lt;- 4776
+&gt;   4544: 00b57533    and     a0, a0, a1              a0 &lt;- 32
+&gt;   4548: 0065f433    and     s0, a1, t1              s0 &lt;- 32
+&gt;   4552: 0064f333    and     t1, s1, t1              t1 &lt;- 4776
+&gt;   4556: 00b5f333    and     t1, a1, a1              t1 &lt;- 2401
+&gt;   4560: 40b005b3    neg     a1, a1                  a1 &lt;- -2401
+&gt;   4564: 008445b3    xor     a1, s0, s0              a1 &lt;- 0
+&gt;   4568: 40a002b3    neg     t0, a0                  t0 &lt;- -32
+&gt;   4572: 00b2f5b3    and     a1, t0, a1              a1 &lt;- 0
+&gt;   4576: 40b48533    sub     a0, s1, a1              a0 &lt;- 4776
+&gt;   4580: 009482b3    add     t0, s1, s1              t0 &lt;- 9552
+&gt;   4584: 0065c5b3    xor     a1, a1, t1              a1 &lt;- 2401
+&gt;   4588: 40900533    neg     a0, s1                  a0 &lt;- -4776
+&gt;   4592: 0085e4b3    or      s1, a1, s0              s1 &lt;- 2401
+&gt;   4596: 009465b3    or      a1, s0, s1              a1 &lt;- 2401
+&gt;   4600: 405305b3    sub     a1, t1, t0              a1 &lt;- -7151
+&gt;   4604: 00b2f5b3    and     a1, t0, a1              a1 &lt;- 9232
+&gt;   4608: 00556533    or      a0, a0, t0              a0 &lt;- -4776
+&gt;   4612: 40828433    sub     s0, t0, s0              s0 &lt;- 9520
+&gt;   4616: 00654433    xor     s0, a0, t1              s0 &lt;- -7111
+&gt;   4620: 0082c433    xor     s0, t0, s0              s0 &lt;- -16023
+&gt;   4624: 00b57433    and     s0, a0, a1              s0 &lt;- 9232
+&gt;   4628: 406002b3    neg     t0, t1                  t0 &lt;- -2401
+&gt;   4632: 00a4f4b3    and     s1, s1, a0              s1 &lt;- 2368
+&gt;   4636: 00944433    xor     s0, s0, s1              s0 &lt;- 11600
+&gt;   4640: 40500333    neg     t1, t0                  t1 &lt;- 2401
+&gt;   4644: 00b5e2b3    or      t0, a1, a1              t0 &lt;- 9232
+&gt;   4648: 00a34433    xor     s0, t1, a0              s0 &lt;- -7111
+&gt;   4652: 0085e433    or      s0, a1, s0              s0 &lt;- -7111
+&gt;   4656: 009342b3    xor     t0, t1, s1              t0 &lt;- 33
+68,92c119,168
+&lt;   4684: 0064e5b3    or      zero, t1, s1            zero &lt;- -481
+&lt;   4688: 40800533      4692: 40b00333      4696: 40600433      4700: 005575b3    and     zero, t0, a0            zero &lt;- -187
+&lt;   4704: 006285b3      4708: 006474b3    and     zero, t1, s0            zero &lt;- -2035
+&lt;   4712: 405505b3      4716: 008482b3      4720: 00b342b3    xor     zero, a1, t1            zero &lt;- 1899
+&lt;   4724: 0062e4b3    or      zero, t1, t0            zero &lt;- -161
+&lt;   4728: 00b50333      4732: 005505b3      4736: 40a48533      4740: 0092f2b3    and     zero, s1, t0            zero &lt;- -2032
+&lt;   4744: 00b405b3      4748: 0092c5b3    xor     zero, s1, t0            zero &lt;- 1863
+&lt;   4752: 40b002b3      4756: 00b372b3    and     zero, a1, t1            zero &lt;- -2044
+&lt;   4760: 005404b3      4764: 40950333      4768: 409502b3      4772: 008564b3    or      zero, s0, a0            zero &lt;- -147
+&lt;   4776: 00647533    and     zero, t1, s0            zero &lt;- -2035
+&lt;   4780: 40b005b3      4784: 40b304b3      4788: 00548533      4792: 0064c2b3    xor     zero, t1, s1            zero &lt;- 1567
+&lt;   4796: 00a48433      4800: 00b54333    xor     zero, a1, a0            zero &lt;- 1537
+&lt;   4804: 00846333    or      zero, s0, s0            zero &lt;- -1715
+&lt;   4808: 00a4f433    and     zero, a0, s1            zero &lt;- -2048
+&lt;   4812: 0052c4b3    xor     zero, t0, t0            zero &lt;- 0
+&lt;   4816: 0084c5b3    xor     zero, s0, s1            zero &lt;- 349
+&lt;   4820: 0052f533    and     zero, t0, t0            zero &lt;- -169
+&lt;   4824: 0092e2b3    or      zero, s1, t0            zero &lt;- -169
+&lt;   4828: 00946433    or      zero, s1, s0            zero &lt;- -1699
+&lt;   4832: 006404b3      4836: 408584b3      4840: 00937333    and     zero, s1, t1            zero &lt;- -2048
+&lt;   4844: 0084f333    and     zero, s0, s1            zero &lt;- -2048
+&lt;   4848: 005364b3    or      zero, t0, t1            zero &lt;- -161
+&lt;   4852: 405504b3      4856: 40648433      4860: 006584b3      4864: 00a56433    or      zero, a0, a0            zero &lt;- -155
+&lt;   4868: 005502b3      4872: 0092c333    xor     zero, s1, t0            zero &lt;- 1863
+&lt;   4876: 40800433      4880: 0094f2b3    and     zero, s1, s1            zero &lt;- -2032
+---
+&gt;   4684: 0064e5b3    or      a1, s1, t1              a1 &lt;- -481
+&gt;   4688: 40800533    neg     a0, s0                  a0 &lt;- 1715
+&gt;   4692: 40b00333    neg     t1, a1                  t1 &lt;- 481
+&gt;   4696: 40600433    neg     s0, t1                  s0 &lt;- -481
+&gt;   4700: 005575b3    and     a1, a0, t0              a1 &lt;- 1555
+&gt;   4704: 006285b3    add     a1, t0, t1              a1 &lt;- 312
+&gt;   4708: 006474b3    and     s1, s0, t1              s1 &lt;- 1
+&gt;   4712: 405505b3    sub     a1, a0, t0              a1 &lt;- 1884
+&gt;   4716: 008482b3    add     t0, s1, s0              t0 &lt;- -480
+&gt;   4720: 00b342b3    xor     t0, t1, a1              t0 &lt;- 1725
+&gt;   4724: 0062e4b3    or      s1, t0, t1              s1 &lt;- 2045
+&gt;   4728: 00b50333    add     t1, a0, a1              t1 &lt;- 3599
+&gt;   4732: 005505b3    add     a1, a0, t0              a1 &lt;- 3440
+&gt;   4736: 40a48533    sub     a0, s1, a0              a0 &lt;- 330
+&gt;   4740: 0092f2b3    and     t0, t0, s1              t0 &lt;- 1725
+&gt;   4744: 00b405b3    add     a1, s0, a1              a1 &lt;- 2959
+&gt;   4748: 0092c5b3    xor     a1, t0, s1              a1 &lt;- 320
+&gt;   4752: 40b002b3    neg     t0, a1                  t0 &lt;- -320
+&gt;   4756: 00b372b3    and     t0, t1, a1              t0 &lt;- 0
+&gt;   4760: 005404b3    add     s1, s0, t0              s1 &lt;- -481
+&gt;   4764: 40950333    sub     t1, a0, s1              t1 &lt;- 811
+&gt;   4768: 409502b3    sub     t0, a0, s1              t0 &lt;- 811
+&gt;   4772: 008564b3    or      s1, a0, s0              s1 &lt;- -161
+&gt;   4776: 00647533    and     a0, s0, t1              a0 &lt;- 523
+&gt;   4780: 40b005b3    neg     a1, a1                  a1 &lt;- -320
+&gt;   4784: 40b304b3    sub     s1, t1, a1              s1 &lt;- 1131
+&gt;   4788: 00548533    add     a0, s1, t0              a0 &lt;- 1942
+&gt;   4792: 0064c2b3    xor     t0, s1, t1              t0 &lt;- 1856
+&gt;   4796: 00a48433    add     s0, s1, a0              s0 &lt;- 3073
+&gt;   4800: 00b54333    xor     t1, a0, a1              t1 &lt;- -1706
+&gt;   4804: 00846333    or      t1, s0, s0              t1 &lt;- 3073
+&gt;   4808: 00a4f433    and     s0, s1, a0              s0 &lt;- 1026
+&gt;   4812: 0052c4b3    xor     s1, t0, t0              s1 &lt;- 0
+&gt;   4816: 0084c5b3    xor     a1, s1, s0              a1 &lt;- 1026
+&gt;   4820: 0052f533    and     a0, t0, t0              a0 &lt;- 1856
+&gt;   4824: 0092e2b3    or      t0, t0, s1              t0 &lt;- 1856
+&gt;   4828: 00946433    or      s0, s0, s1              s0 &lt;- 1026
+&gt;   4832: 006404b3    add     s1, s0, t1              s1 &lt;- 4099
+&gt;   4836: 408584b3    sub     s1, a1, s0              s1 &lt;- 0
+&gt;   4840: 00937333    and     t1, t1, s1              t1 &lt;- 0
+&gt;   4844: 0084f333    and     t1, s1, s0              t1 &lt;- 0
+&gt;   4848: 005364b3    or      s1, t1, t0              s1 &lt;- 1856
+&gt;   4852: 405504b3    sub     s1, a0, t0              s1 &lt;- 0
+&gt;   4856: 40648433    sub     s0, s1, t1              s0 &lt;- 0
+&gt;   4860: 006584b3    add     s1, a1, t1              s1 &lt;- 1026
+&gt;   4864: 00a56433    or      s0, a0, a0              s0 &lt;- 1856
+&gt;   4868: 005502b3    add     t0, a0, t0              t0 &lt;- 3712
+&gt;   4872: 0092c333    xor     t1, t0, s1              t1 &lt;- 2690
+&gt;   4876: 40800433    neg     s0, s0                  s0 &lt;- -1856
+&gt;   4880: 0094f2b3    and     t0, s1, s1              t0 &lt;- 1026
+99,120c175,225
+&lt;   4908: 00656333    or      zero, t1, a0            zero &lt;- -33
+&lt;   4912: 40a005b3      4916: 40a50333      4920: 0095e5b3    or      zero, s1, a1            zero &lt;- -395
+&lt;   4924: 40a004b3      4928: 008285b3      4932: 00a345b3    xor     zero, a0, t1            zero &lt;- -1698
+&lt;   4936: 00b46533    or      zero, a1, s0            zero &lt;- -5
+&lt;   4940: 009482b3      4944: 00b285b3      4948: 00a404b3      4952: 0055c433    xor     zero, t0, a1            zero &lt;- -31
+&lt;   4956: 00b565b3    or      zero, a1, a0            zero &lt;- -267
+&lt;   4960: 00a582b3      4964: 006504b3      4968: 40b48333      4972: 009362b3    or      zero, s1, t1            zero &lt;- -1
+&lt;   4976: 0095f433    and     zero, s1, a1            zero &lt;- 1056
+&lt;   4980: 00946333    or      zero, s1, s0            zero &lt;- 2031
+&lt;   4984: 40900533      4988: 009442b3    xor     zero, s1, s0            zero &lt;- 462
+&lt;   4992: 409004b3      4996: 40500333      5000: 409005b3      5004: 00930533      5008: 0082c4b3    xor     zero, s0, t0            zero &lt;- 1146
+&lt;   5012: 00b582b3      5016: 005572b3    and     zero, t0, a0            zero &lt;- 641
+&lt;   5020: 00b5e433    or      zero, a1, a1            zero &lt;- -912
+&lt;   5024: 006502b3      5028: 40a40333      5032: 00b575b3    and     zero, a1, a0            zero &lt;- 1024
+&lt;   5036: 005444b3    xor     zero, t0, s0            zero &lt;- 1146
+&lt;   5040: 408285b3      5044: 006575b3    and     zero, t1, a0            zero &lt;- 1665
+&lt;   5048: 00634433    xor     zero, t1, t1            zero &lt;- 0
+&lt;   5052: 0054c4b3    xor     zero, t0, s1            zero &lt;- 1460
+&lt;   5056: 40a304b3      5060: 40558433      5064: 408002b3      5068: 00b48333      5072: 00a46333    or      zero, a0, s0            zero &lt;- 2031
+&lt;   5076: 008584b3      5080: 405505b3      5084: 006462b3    or      zero, t1, s0            zero &lt;- -5
+&lt;   5088: 005584b3      5092: 005465b3    or      zero, t0, s0            zero &lt;- 2043
+&lt;   5096: 00a505b3      5100: 40b482b3      5104: 40948433      5108: 3b200513    li      a0, 946                 a0 &lt;- 946
+---
+&gt;   4908: 00656333    or      t1, a0, t1              t1 &lt;- -33
+&gt;   4912: 40a005b3    neg     a1, a0                  a1 &lt;- -1669
+&gt;   4916: 40a50333    sub     t1, a0, a0              t1 &lt;- 0
+&gt;   4920: 0095e5b3    or      a1, a1, s1              a1 &lt;- -129
+&gt;   4924: 40a004b3    neg     s1, a0                  s1 &lt;- -1669
+&gt;   4928: 008285b3    add     a1, t0, s0              a1 &lt;- 2940
+&gt;   4932: 00a345b3    xor     a1, t1, a0              a1 &lt;- 1669
+&gt;   4936: 00b46533    or      a0, s0, a1              a0 &lt;- 2031
+&gt;   4940: 009482b3    add     t0, s1, s1              t0 &lt;- -3338
+&gt;   4944: 00b285b3    add     a1, t0, a1              a1 &lt;- -1669
+&gt;   4948: 00a404b3    add     s1, s0, a0              s1 &lt;- 4058
+&gt;   4952: 0055c433    xor     s0, a1, t0              s0 &lt;- 2957
+&gt;   4956: 00b565b3    or      a1, a0, a1              a1 &lt;- -1
+&gt;   4960: 00a582b3    add     t0, a1, a0              t0 &lt;- 2030
+&gt;   4964: 006504b3    add     s1, a0, t1              s1 &lt;- 2031
+&gt;   4968: 40b48333    sub     t1, s1, a1              t1 &lt;- 2032
+&gt;   4972: 009362b3    or      t0, t1, s1              t0 &lt;- 2047
+&gt;   4976: 0095f433    and     s0, a1, s1              s0 &lt;- 2031
+&gt;   4980: 00946333    or      t1, s0, s1              t1 &lt;- 2031
+&gt;   4984: 40900533    neg     a0, s1                  a0 &lt;- -2031
+&gt;   4988: 009442b3    xor     t0, s0, s1              t0 &lt;- 0
+&gt;   4992: 409004b3    neg     s1, s1                  s1 &lt;- -2031
+&gt;   4996: 40500333    neg     t1, t0                  t1 &lt;- 0
+&gt;   5000: 409005b3    neg     a1, s1                  a1 &lt;- 2031
+&gt;   5004: 00930533    add     a0, t1, s1              a0 &lt;- -2031
+&gt;   5008: 0082c4b3    xor     s1, t0, s0              s1 &lt;- 2031
+&gt;   5012: 00b582b3    add     t0, a1, a1              t0 &lt;- 4062
+&gt;   5016: 005572b3    and     t0, a0, t0              t0 &lt;- 2064
+&gt;   5020: 00b5e433    or      s0, a1, a1              s0 &lt;- 2031
+&gt;   5024: 006502b3    add     t0, a0, t1              t0 &lt;- -2031
+&gt;   5028: 40a40333    sub     t1, s0, a0              t1 &lt;- 4062
+&gt;   5032: 00b575b3    and     a1, a0, a1              a1 &lt;- 1
+&gt;   5036: 005444b3    xor     s1, s0, t0              s1 &lt;- -2
+&gt;   5040: 408285b3    sub     a1, t0, s0              a1 &lt;- -4062
+&gt;   5044: 006575b3    and     a1, a0, t1              a1 &lt;- 2064
+&gt;   5048: 00634433    xor     s0, t1, t1              s0 &lt;- 0
+&gt;   5052: 0054c4b3    xor     s1, s1, t0              s1 &lt;- 2031
+&gt;   5056: 40a304b3    sub     s1, t1, a0              s1 &lt;- 6093
+&gt;   5060: 40558433    sub     s0, a1, t0              s0 &lt;- 4095
+&gt;   5064: 408002b3    neg     t0, s0                  t0 &lt;- -4095
+&gt;   5068: 00b48333    add     t1, s1, a1              t1 &lt;- 8157
+&gt;   5072: 00a46333    or      t1, s0, a0              t1 &lt;- -1
+&gt;   5076: 008584b3    add     s1, a1, s0              s1 &lt;- 6159
+&gt;   5080: 405505b3    sub     a1, a0, t0              a1 &lt;- 2064
+&gt;   5084: 006462b3    or      t0, s0, t1              t0 &lt;- -1
+&gt;   5088: 005584b3    add     s1, a1, t0              s1 &lt;- 2063
+&gt;   5092: 005465b3    or      a1, s0, t0              a1 &lt;- -1
+&gt;   5096: 00a505b3    add     a1, a0, a0              a1 &lt;- -4062
+&gt;   5100: 40b482b3    sub     t0, s1, a1              t0 &lt;- 6125
+&gt;   5104: 40948433    sub     s0, s1, s1              s0 &lt;- 0
+&gt;   5108: 3b200513    li      a0, 946                 a0 &lt;- 946
+126,157c231,281
+&lt;   5132: 408485b3      5136: 00b44433    xor     zero, a1, s0            zero &lt;- -201
+&lt;   5140: 008375b3    and     zero, s0, t1            zero &lt;- 42
+&lt;   5144: 00a4f2b3    and     zero, a0, s1            zero &lt;- 304
+&lt;   5148: 40a505b3      5152: 00944333    xor     zero, s1, s0            zero &lt;- 334
+&lt;   5156: 00a464b3    or      zero, a0, s0            zero &lt;- 954
+&lt;   5160: 40a584b3      5164: 006575b3    and     zero, t1, a0            zero &lt;- 930
+&lt;   5168: 00b5f2b3    and     zero, a1, a1            zero &lt;- -243
+&lt;   5172: 005364b3    or      zero, t0, t1            zero &lt;- -1041
+&lt;   5176: 0085e433    or      zero, s0, a1            zero &lt;- -193
+&lt;   5180: 00a5c4b3    xor     zero, a0, a1            zero &lt;- -833
+&lt;   5184: 008562b3    or      zero, s0, a0            zero &lt;- 954
+&lt;   5188: 0052c2b3    xor     zero, t0, t0            zero &lt;- 0
+&lt;   5192: 0095c433    xor     zero, s1, a1            zero &lt;- -391
+&lt;   5196: 00a345b3    xor     zero, a0, t1            zero &lt;- -1955
+&lt;   5200: 0085f433    and     zero, s0, a1            zero &lt;- 8
+&lt;   5204: 408585b3      5208: 00b37433    and     zero, a1, t1            zero &lt;- -1267
+&lt;   5212: 00848433      5216: 00a4f433    and     zero, a0, s1            zero &lt;- 304
+&lt;   5220: 40548433      5224: 0052f333    and     zero, t0, t0            zero &lt;- 40
+&lt;   5228: 00b442b3    xor     zero, a1, s0            zero &lt;- -201
+&lt;   5232: 0095f433    and     zero, s1, a1            zero &lt;- 260
+&lt;   5236: 0064f5b3    and     zero, t1, s1            zero &lt;- 356
+&lt;   5240: 00b4c5b3    xor     zero, a1, s1            zero &lt;- -391
+&lt;   5244: 0085e5b3    or      zero, s0, a1            zero &lt;- -193
+&lt;   5248: 40600533      5252: 00b4f433    and     zero, a1, s1            zero &lt;- 260
+&lt;   5256: 408302b3      5260: 00b465b3    or      zero, a1, s0            zero &lt;- -193
+&lt;   5264: 40828433      5268: 00628333      5272: 00b444b3    xor     zero, a1, s0            zero &lt;- -201
+&lt;   5276: 40a505b3      5280: 40b40333      5284: 009564b3    or      zero, s1, a0            zero &lt;- 1014
+&lt;   5288: 0055f533    and     zero, t0, a1            zero &lt;- 8
+&lt;   5292: 40600533      5296: 40a00333      5300: 00b364b3    or      zero, a1, t1            zero &lt;- -17
+&lt;   5304: 40a404b3      5308: 00b28533      5312: 0085c333    xor     zero, s0, a1            zero &lt;- -201
+&lt;   5316: 406582b3      5320: 005575b3    and     zero, t0, a0            zero &lt;- 32
+&lt;   5324: 405585b3      5328: 40b00533      5332: 36500513    li      a0, 869                 a0 &lt;- 869
+---
+&gt;   5132: 408485b3    sub     a1, s1, s0              a1 &lt;- 314
+&gt;   5136: 00b44433    xor     s0, s0, a1              s0 &lt;- 256
+&gt;   5140: 008375b3    and     a1, t1, s0              a1 &lt;- 256
+&gt;   5144: 00a4f2b3    and     t0, s1, a0              t0 &lt;- 304
+&gt;   5148: 40a505b3    sub     a1, a0, a0              a1 &lt;- 0
+&gt;   5152: 00944333    xor     t1, s0, s1              t1 &lt;- 116
+&gt;   5156: 00a464b3    or      s1, s0, a0              s1 &lt;- 946
+&gt;   5160: 40a584b3    sub     s1, a1, a0              s1 &lt;- -946
+&gt;   5164: 006575b3    and     a1, a0, t1              a1 &lt;- 48
+&gt;   5168: 00b5f2b3    and     t0, a1, a1              t0 &lt;- 48
+&gt;   5172: 005364b3    or      s1, t1, t0              s1 &lt;- 116
+&gt;   5176: 0085e433    or      s0, a1, s0              s0 &lt;- 304
+&gt;   5180: 00a5c4b3    xor     s1, a1, a0              s1 &lt;- 898
+&gt;   5184: 008562b3    or      t0, a0, s0              t0 &lt;- 946
+&gt;   5188: 0052c2b3    xor     t0, t0, t0              t0 &lt;- 0
+&gt;   5192: 0095c433    xor     s0, a1, s1              s0 &lt;- 946
+&gt;   5196: 00a345b3    xor     a1, t1, a0              a1 &lt;- 966
+&gt;   5200: 0085f433    and     s0, a1, s0              s0 &lt;- 898
+&gt;   5204: 408585b3    sub     a1, a1, s0              a1 &lt;- 68
+&gt;   5208: 00b37433    and     s0, t1, a1              s0 &lt;- 68
+&gt;   5212: 00848433    add     s0, s1, s0              s0 &lt;- 966
+&gt;   5216: 00a4f433    and     s0, s1, a0              s0 &lt;- 898
+&gt;   5220: 40548433    sub     s0, s1, t0              s0 &lt;- 898
+&gt;   5224: 0052f333    and     t1, t0, t0              t1 &lt;- 0
+&gt;   5228: 00b442b3    xor     t0, s0, a1              t0 &lt;- 966
+&gt;   5232: 0095f433    and     s0, a1, s1              s0 &lt;- 0
+&gt;   5236: 0064f5b3    and     a1, s1, t1              a1 &lt;- 0
+&gt;   5240: 00b4c5b3    xor     a1, s1, a1              a1 &lt;- 898
+&gt;   5244: 0085e5b3    or      a1, a1, s0              a1 &lt;- 898
+&gt;   5248: 40600533    neg     a0, t1                  a0 &lt;- 0
+&gt;   5252: 00b4f433    and     s0, s1, a1              s0 &lt;- 898
+&gt;   5256: 408302b3    sub     t0, t1, s0              t0 &lt;- -898
+&gt;   5260: 00b465b3    or      a1, s0, a1              a1 &lt;- 898
+&gt;   5264: 40828433    sub     s0, t0, s0              s0 &lt;- -1796
+&gt;   5268: 00628333    add     t1, t0, t1              t1 &lt;- -898
+&gt;   5272: 00b444b3    xor     s1, s0, a1              s1 &lt;- -1154
+&gt;   5276: 40a505b3    sub     a1, a0, a0              a1 &lt;- 0
+&gt;   5280: 40b40333    sub     t1, s0, a1              t1 &lt;- -1796
+&gt;   5284: 009564b3    or      s1, a0, s1              s1 &lt;- -1154
+&gt;   5288: 0055f533    and     a0, a1, t0              a0 &lt;- 0
+&gt;   5292: 40600533    neg     a0, t1                  a0 &lt;- 1796
+&gt;   5296: 40a00333    neg     t1, a0                  t1 &lt;- -1796
+&gt;   5300: 00b364b3    or      s1, t1, a1              s1 &lt;- -1796
+&gt;   5304: 40a404b3    sub     s1, s0, a0              s1 &lt;- -3592
+&gt;   5308: 00b28533    add     a0, t0, a1              a0 &lt;- -898
+&gt;   5312: 0085c333    xor     t1, a1, s0              t1 &lt;- -1796
+&gt;   5316: 406582b3    sub     t0, a1, t1              t0 &lt;- 1796
+&gt;   5320: 005575b3    and     a1, a0, t0              a1 &lt;- 1028
+&gt;   5324: 405585b3    sub     a1, a1, t0              a1 &lt;- -768
+&gt;   5328: 40b00533    neg     a0, a1                  a0 &lt;- 768
+&gt;   5332: 36500513    li      a0, 869                 a0 &lt;- 869
+163,189c287,337
+&lt;   5356: 005564b3    or      zero, t0, a0            zero &lt;- -25
+&lt;   5360: 00536333    or      zero, t0, t1            zero &lt;- -290
+&lt;   5364: 00a48333      5368: 0052c4b3    xor     zero, t0, t0            zero &lt;- 0
+&lt;   5372: 008485b3      5376: 0064c433    xor     zero, t1, s1            zero &lt;- -1564
+&lt;   5380: 006302b3      5384: 408585b3      5388: 00957333    and     zero, s1, a0            zero &lt;- 800
+&lt;   5392: 0092e433    or      zero, s1, t0            zero &lt;- -6
+&lt;   5396: 008504b3      5400: 0095c433    xor     zero, s1, a1            zero &lt;- -2041
+&lt;   5404: 0082c333    xor     zero, s0, t0            zero &lt;- 1004
+&lt;   5408: 00a5f5b3    and     zero, a0, a1            zero &lt;- 805
+&lt;   5412: 00a5e2b3    or      zero, a0, a1            zero &lt;- -1
+&lt;   5416: 0085c433    xor     zero, s0, a1            zero &lt;- 145
+&lt;   5420: 00634533    xor     zero, t1, t1            zero &lt;- 0
+&lt;   5424: 00b2e333    or      zero, a1, t0            zero &lt;- -1
+&lt;   5428: 00b572b3    and     zero, a1, a0            zero &lt;- 805
+&lt;   5432: 00b44433    xor     zero, a1, s0            zero &lt;- 145
+&lt;   5436: 00848533      5440: 00854333    xor     zero, s0, a0            zero &lt;- -949
+&lt;   5444: 00828533      5448: 406404b3      5452: 406004b3      5456: 0084e5b3    or      zero, s0, s1            zero &lt;- -66
+&lt;   5460: 008464b3    or      zero, s0, s0            zero &lt;- -210
+&lt;   5464: 005585b3      5468: 0092f5b3    and     zero, s1, t0            zero &lt;- 1152
+&lt;   5472: 40a00333      5476: 00b50433      5480: 0054e533    or      zero, t0, s1            zero &lt;- -6
+&lt;   5484: 40800433      5488: 0094c4b3    xor     zero, s1, s1            zero &lt;- 0
+&lt;   5492: 005504b3      5496: 00828533      5500: 405004b3      5504: 405284b3      5508: 00634433    xor     zero, t1, t1            zero &lt;- 0
+&lt;   5512: 40b28433      5516: 409504b3      5520: 00928533      5524: 005462b3    or      zero, t0, s0            zero &lt;- -18
+&lt;   5528: 409484b3      5532: 0064c5b3    xor     zero, t1, s1            zero &lt;- -1564
+&lt;   5536: 00b2c4b3    xor     zero, a1, t0            zero &lt;- 893
+&lt;   5540: 405505b3      5544: 406285b3      5548: 0085f333    and     zero, s0, a1            zero &lt;- -210
+&lt;   5552: 40b482b3      5556: 50800513    li      a0, 1288                a0 &lt;- 1288
+---
+&gt;   5356: 005564b3    or      s1, a0, t0              s1 &lt;- -25
+&gt;   5360: 00536333    or      t1, t1, t0              t1 &lt;- -290
+&gt;   5364: 00a48333    add     t1, s1, a0              t1 &lt;- 844
+&gt;   5368: 0052c4b3    xor     s1, t0, t0              s1 &lt;- 0
+&gt;   5372: 008485b3    add     a1, s1, s0              a1 &lt;- -210
+&gt;   5376: 0064c433    xor     s0, s1, t1              s0 &lt;- 844
+&gt;   5380: 006302b3    add     t0, t1, t1              t0 &lt;- 1688
+&gt;   5384: 408585b3    sub     a1, a1, s0              a1 &lt;- -1054
+&gt;   5388: 00957333    and     t1, a0, s1              t1 &lt;- 0
+&gt;   5392: 0092e433    or      s0, t0, s1              s0 &lt;- 1688
+&gt;   5396: 008504b3    add     s1, a0, s0              s1 &lt;- 2557
+&gt;   5400: 0095c433    xor     s0, a1, s1              s0 &lt;- -3553
+&gt;   5404: 0082c333    xor     t1, t0, s0              t1 &lt;- -2937
+&gt;   5408: 00a5f5b3    and     a1, a1, a0              a1 &lt;- 864
+&gt;   5412: 00a5e2b3    or      t0, a1, a0              t0 &lt;- 869
+&gt;   5416: 0085c433    xor     s0, a1, s0              s0 &lt;- -3713
+&gt;   5420: 00634533    xor     a0, t1, t1              a0 &lt;- 0
+&gt;   5424: 00b2e333    or      t1, t0, a1              t1 &lt;- 869
+&gt;   5428: 00b572b3    and     t0, a0, a1              t0 &lt;- 0
+&gt;   5432: 00b44433    xor     s0, s0, a1              s0 &lt;- -3553
+&gt;   5436: 00848533    add     a0, s1, s0              a0 &lt;- -996
+&gt;   5440: 00854333    xor     t1, a0, s0              t1 &lt;- 3587
+&gt;   5444: 00828533    add     a0, t0, s0              a0 &lt;- -3553
+&gt;   5448: 406404b3    sub     s1, s0, t1              s1 &lt;- -7140
+&gt;   5452: 406004b3    neg     s1, t1                  s1 &lt;- -3587
+&gt;   5456: 0084e5b3    or      a1, s1, s0              a1 &lt;- -3073
+&gt;   5460: 008464b3    or      s1, s0, s0              s1 &lt;- -3553
+&gt;   5464: 005585b3    add     a1, a1, t0              a1 &lt;- -3073
+&gt;   5468: 0092f5b3    and     a1, t0, s1              a1 &lt;- 0
+&gt;   5472: 40a00333    neg     t1, a0                  t1 &lt;- 3553
+&gt;   5476: 00b50433    add     s0, a0, a1              s0 &lt;- -3553
+&gt;   5480: 0054e533    or      a0, s1, t0              a0 &lt;- -3553
+&gt;   5484: 40800433    neg     s0, s0                  s0 &lt;- 3553
+&gt;   5488: 0094c4b3    xor     s1, s1, s1              s1 &lt;- 0
+&gt;   5492: 005504b3    add     s1, a0, t0              s1 &lt;- -3553
+&gt;   5496: 00828533    add     a0, t0, s0              a0 &lt;- 3553
+&gt;   5500: 405004b3    neg     s1, t0                  s1 &lt;- 0
+&gt;   5504: 405284b3    sub     s1, t0, t0              s1 &lt;- 0
+&gt;   5508: 00634433    xor     s0, t1, t1              s0 &lt;- 0
+&gt;   5512: 40b28433    sub     s0, t0, a1              s0 &lt;- 0
+&gt;   5516: 409504b3    sub     s1, a0, s1              s1 &lt;- 3553
+&gt;   5520: 00928533    add     a0, t0, s1              a0 &lt;- 3553
+&gt;   5524: 005462b3    or      t0, s0, t0              t0 &lt;- 0
+&gt;   5528: 409484b3    sub     s1, s1, s1              s1 &lt;- 0
+&gt;   5532: 0064c5b3    xor     a1, s1, t1              a1 &lt;- 3553
+&gt;   5536: 00b2c4b3    xor     s1, t0, a1              s1 &lt;- 3553
+&gt;   5540: 405505b3    sub     a1, a0, t0              a1 &lt;- 3553
+&gt;   5544: 406285b3    sub     a1, t0, t1              a1 &lt;- -3553
+&gt;   5548: 0085f333    and     t1, a1, s0              t1 &lt;- 0
+&gt;   5552: 40b482b3    sub     t0, s1, a1              t0 &lt;- 7106
+&gt;   5556: 50800513    li      a0, 1288                a0 &lt;- 1288
+195,219c343,393
+&lt;   5580: 0095c433    xor     zero, s1, a1            zero &lt;- -1882
+&lt;   5584: 00a47533    and     zero, a0, s0            zero &lt;- 256
+&lt;   5588: 0065e5b3    or      zero, t1, a1            zero &lt;- -531
+&lt;   5592: 40b50533      5596: 40b004b3      5600: 00958433      5604: 409002b3      5608: 405004b3      5612: 405505b3      5616: 00a5f5b3    and     zero, a0, a1            zero &lt;- 256
+&lt;   5620: 005374b3    and     zero, t0, t1            zero &lt;- 1101
+&lt;   5624: 0064e333    or      zero, t1, s1            zero &lt;- 1359
+&lt;   5628: 00b5e433    or      zero, a1, a1            zero &lt;- -1628
+&lt;   5632: 00658433      5636: 009442b3    xor     zero, s1, s0            zero &lt;- -1482
+&lt;   5640: 00544433    xor     zero, t0, s0            zero &lt;- 1641
+&lt;   5644: 005305b3      5648: 00b462b3    or      zero, a1, s0            zero &lt;- -1100
+&lt;   5652: 40a30533      5656: 40800533      5660: 40928433      5664: 00a50333      5668: 0094f5b3    and     zero, s1, s1            zero &lt;- 258
+&lt;   5672: 00a54433    xor     zero, a0, a0            zero &lt;- 0
+&lt;   5676: 005564b3    or      zero, t0, a0            zero &lt;- -675
+&lt;   5680: 006372b3    and     zero, t1, t1            zero &lt;- 1101
+&lt;   5684: 0065c2b3    xor     zero, t1, a1            zero &lt;- -535
+&lt;   5688: 0094e5b3    or      zero, s1, s1            zero &lt;- 258
+&lt;   5692: 405582b3      5696: 0084f533    and     zero, s0, s1            zero &lt;- 256
+&lt;   5700: 409505b3      5704: 009364b3    or      zero, s1, t1            zero &lt;- 1359
+&lt;   5708: 40b30433      5712: 0052e5b3    or      zero, t0, t0            zero &lt;- -675
+&lt;   5716: 408002b3      5720: 40628333      5724: 00834533    xor     zero, s0, t1            zero &lt;- -135
+&lt;   5728: 005504b3      5732: 40b005b3      5736: 40a484b3      5740: 0064c4b3    xor     zero, t1, s1            zero &lt;- 1359
+&lt;   5744: 408004b3      5748: 0054e2b3    or      zero, t0, s1            zero &lt;- -673
+&lt;   5752: 00a404b3      5756: 40b00433      5760: 00b2c433    xor     zero, a1, t0            zero &lt;- 1273
+&lt;   5764: 405002b3      5768: 0092e5b3    or      zero, s1, t0            zero &lt;- -673
+&lt;   5772: 005504b3      5776: 40a40433      5780: 99100513    li      a0, -1647               a0 &lt;- -1647
+---
+&gt;   5580: 0095c433    xor     s0, a1, s1              s0 &lt;- -1882
+&gt;   5584: 00a47533    and     a0, s0, a0              a0 &lt;- 0
+&gt;   5588: 0065e5b3    or      a1, a1, t1              a1 &lt;- -531
+&gt;   5592: 40b50533    sub     a0, a0, a1              a0 &lt;- 531
+&gt;   5596: 40b004b3    neg     s1, a1                  s1 &lt;- 531
+&gt;   5600: 00958433    add     s0, a1, s1              s0 &lt;- 0
+&gt;   5604: 409002b3    neg     t0, s1                  t0 &lt;- -531
+&gt;   5608: 405004b3    neg     s1, t0                  s1 &lt;- 531
+&gt;   5612: 405505b3    sub     a1, a0, t0              a1 &lt;- 1062
+&gt;   5616: 00a5f5b3    and     a1, a1, a0              a1 &lt;- 2
+&gt;   5620: 005374b3    and     s1, t1, t0              s1 &lt;- 1101
+&gt;   5624: 0064e333    or      t1, s1, t1              t1 &lt;- 1101
+&gt;   5628: 00b5e433    or      s0, a1, a1              s0 &lt;- 2
+&gt;   5632: 00658433    add     s0, a1, t1              s0 &lt;- 1103
+&gt;   5636: 009442b3    xor     t0, s0, s1              t0 &lt;- 2
+&gt;   5640: 00544433    xor     s0, s0, t0              s0 &lt;- 1101
+&gt;   5644: 005305b3    add     a1, t1, t0              a1 &lt;- 1103
+&gt;   5648: 00b462b3    or      t0, s0, a1              t0 &lt;- 1103
+&gt;   5652: 40a30533    sub     a0, t1, a0              a0 &lt;- 570
+&gt;   5656: 40800533    neg     a0, s0                  a0 &lt;- -1101
+&gt;   5660: 40928433    sub     s0, t0, s1              s0 &lt;- 2
+&gt;   5664: 00a50333    add     t1, a0, a0              t1 &lt;- -2202
+&gt;   5668: 0094f5b3    and     a1, s1, s1              a1 &lt;- 1101
+&gt;   5672: 00a54433    xor     s0, a0, a0              s0 &lt;- 0
+&gt;   5676: 005564b3    or      s1, a0, t0              s1 &lt;- -1
+&gt;   5680: 006372b3    and     t0, t1, t1              t0 &lt;- -2202
+&gt;   5684: 0065c2b3    xor     t0, a1, t1              t0 &lt;- -3285
+&gt;   5688: 0094e5b3    or      a1, s1, s1              a1 &lt;- -1
+&gt;   5692: 405582b3    sub     t0, a1, t0              t0 &lt;- 3284
+&gt;   5696: 0084f533    and     a0, s1, s0              a0 &lt;- 0
+&gt;   5700: 409505b3    sub     a1, a0, s1              a1 &lt;- 1
+&gt;   5704: 009364b3    or      s1, t1, s1              s1 &lt;- -1
+&gt;   5708: 40b30433    sub     s0, t1, a1              s0 &lt;- -2203
+&gt;   5712: 0052e5b3    or      a1, t0, t0              a1 &lt;- 3284
+&gt;   5716: 408002b3    neg     t0, s0                  t0 &lt;- 2203
+&gt;   5720: 40628333    sub     t1, t0, t1              t1 &lt;- 4405
+&gt;   5724: 00834533    xor     a0, t1, s0              a0 &lt;- -6576
+&gt;   5728: 005504b3    add     s1, a0, t0              s1 &lt;- -4373
+&gt;   5732: 40b005b3    neg     a1, a1                  a1 &lt;- -3284
+&gt;   5736: 40a484b3    sub     s1, s1, a0              s1 &lt;- 2203
+&gt;   5740: 0064c4b3    xor     s1, s1, t1              s1 &lt;- 6574
+&gt;   5744: 408004b3    neg     s1, s0                  s1 &lt;- 2203
+&gt;   5748: 0054e2b3    or      t0, s1, t0              t0 &lt;- 2203
+&gt;   5752: 00a404b3    add     s1, s0, a0              s1 &lt;- -8779
+&gt;   5756: 40b00433    neg     s0, a1                  s0 &lt;- 3284
+&gt;   5760: 00b2c433    xor     s0, t0, a1              s0 &lt;- -1097
+&gt;   5764: 405002b3    neg     t0, t0                  t0 &lt;- -2203
+&gt;   5768: 0092e5b3    or      a1, t0, s1              a1 &lt;- -11
+&gt;   5772: 005504b3    add     s1, a0, t0              s1 &lt;- -8779
+&gt;   5776: 40a40433    sub     s0, s0, a0              s0 &lt;- 5479
+&gt;   5780: 99100513    li      a0, -1647               a0 &lt;- -1647
+225,248c399,448
+&lt;   5804: 0085c2b3    xor     zero, s0, a1            zero &lt;- 1728
+&lt;   5808: 00534333    xor     zero, t0, t1            zero &lt;- 1529
+&lt;   5812: 40600433      5816: 00a5c533    xor     zero, a0, a1            zero &lt;- 843
+&lt;   5820: 00950533      5824: 40b40433      5828: 40900533      5832: 00648433      5836: 00a4f333    and     zero, a0, s1            zero &lt;- -1776
+&lt;   5840: 0094c333    xor     zero, s1, s1            zero &lt;- 0
+&lt;   5844: 00b4e4b3    or      zero, a1, s1            zero &lt;- -38
+&lt;   5848: 008462b3    or      zero, s0, s0            zero &lt;- -998
+&lt;   5852: 00848533      5856: 40958533      5860: 005475b3    and     zero, t0, s0            zero &lt;- -2048
+&lt;   5864: 00b4c2b3    xor     zero, a1, s1            zero &lt;- 1410
+&lt;   5868: 40900333      5872: 00b28433      5876: 008374b3    and     zero, s0, t1            zero &lt;- -1000
+&lt;   5880: 40800333      5884: 00a40533      5888: 00b2f2b3    and     zero, a1, t0            zero &lt;- -1536
+&lt;   5892: 0052c333    xor     zero, t0, t0            zero &lt;- 0
+&lt;   5896: 00a5e533    or      zero, a0, a1            zero &lt;- -1061
+&lt;   5900: 40830533      5904: 0062f4b3    and     zero, t1, t0            zero &lt;- -1536
+&lt;   5908: 40858433      5912: 0082e4b3    or      zero, s0, t0            zero &lt;- -454
+&lt;   5916: 40b405b3      5920: 00628433      5924: 00a36533    or      zero, a0, t1            zero &lt;- -39
+&lt;   5928: 00630533      5932: 00b4f5b3    and     zero, a1, s1            zero &lt;- -1448
+&lt;   5936: 409284b3      5940: 00930333      5944: 40b002b3      5948: 0085e533    or      zero, s0, a1            zero &lt;- -294
+&lt;   5952: 40548433      5956: 00a372b3    and     zero, a0, t1            zero &lt;- -1647
+&lt;   5960: 0082e5b3    or      zero, s0, t0            zero &lt;- -454
+&lt;   5964: 40600433      5968: 0085e533    or      zero, s0, a1            zero &lt;- -294
+&lt;   5972: 406005b3      5976: 006485b3      5980: 408502b3      5984: 406485b3      5988: 00558533      5992: 0054f333    and     zero, t0, s1            zero &lt;- -1536
+&lt;   5996: 0094f433    and     zero, s1, s1            zero &lt;- -168
+&lt;   6000: 0052e4b3    or      zero, t0, t0            zero &lt;- -1504
+---
+&gt;   5804: 0085c2b3    xor     t0, a1, s0              t0 &lt;- 1728
+&gt;   5808: 00534333    xor     t1, t1, t0              t1 &lt;- -1767
+&gt;   5812: 40600433    neg     s0, t1                  s0 &lt;- 1767
+&gt;   5816: 00a5c533    xor     a0, a1, a0              a0 &lt;- 843
+&gt;   5820: 00950533    add     a0, a0, s1              a0 &lt;- 675
+&gt;   5824: 40b40433    sub     s0, s0, a1              s0 &lt;- 3085
+&gt;   5828: 40900533    neg     a0, s1                  a0 &lt;- 168
+&gt;   5832: 00648433    add     s0, s1, t1              s0 &lt;- -1935
+&gt;   5836: 00a4f333    and     t1, s1, a0              t1 &lt;- 8
+&gt;   5840: 0094c333    xor     t1, s1, s1              t1 &lt;- 0
+&gt;   5844: 00b4e4b3    or      s1, s1, a1              s1 &lt;- -38
+&gt;   5848: 008462b3    or      t0, s0, s0              t0 &lt;- -1935
+&gt;   5852: 00848533    add     a0, s1, s0              a0 &lt;- -1973
+&gt;   5856: 40958533    sub     a0, a1, s1              a0 &lt;- -1280
+&gt;   5860: 005475b3    and     a1, s0, t0              a1 &lt;- -1935
+&gt;   5864: 00b4c2b3    xor     t0, s1, a1              t0 &lt;- 1963
+&gt;   5868: 40900333    neg     t1, s1                  t1 &lt;- 38
+&gt;   5872: 00b28433    add     s0, t0, a1              s0 &lt;- 28
+&gt;   5876: 008374b3    and     s1, t1, s0              s1 &lt;- 4
+&gt;   5880: 40800333    neg     t1, s0                  t1 &lt;- -28
+&gt;   5884: 00a40533    add     a0, s0, a0              a0 &lt;- -1252
+&gt;   5888: 00b2f2b3    and     t0, t0, a1              t0 &lt;- 33
+&gt;   5892: 0052c333    xor     t1, t0, t0              t1 &lt;- 0
+&gt;   5896: 00a5e533    or      a0, a1, a0              a0 &lt;- -1155
+&gt;   5900: 40830533    sub     a0, t1, s0              a0 &lt;- -28
+&gt;   5904: 0062f4b3    and     s1, t0, t1              s1 &lt;- 0
+&gt;   5908: 40858433    sub     s0, a1, s0              s0 &lt;- -1963
+&gt;   5912: 0082e4b3    or      s1, t0, s0              s1 &lt;- -1931
+&gt;   5916: 40b405b3    sub     a1, s0, a1              a1 &lt;- -28
+&gt;   5920: 00628433    add     s0, t0, t1              s0 &lt;- 33
+&gt;   5924: 00a36533    or      a0, t1, a0              a0 &lt;- -28
+&gt;   5928: 00630533    add     a0, t1, t1              a0 &lt;- 0
+&gt;   5932: 00b4f5b3    and     a1, s1, a1              a1 &lt;- -1948
+&gt;   5936: 409284b3    sub     s1, t0, s1              s1 &lt;- 1964
+&gt;   5940: 00930333    add     t1, t1, s1              t1 &lt;- 1964
+&gt;   5944: 40b002b3    neg     t0, a1                  t0 &lt;- 1948
+&gt;   5948: 0085e533    or      a0, a1, s0              a0 &lt;- -1947
+&gt;   5952: 40548433    sub     s0, s1, t0              s0 &lt;- 16
+&gt;   5956: 00a372b3    and     t0, t1, a0              t0 &lt;- 36
+&gt;   5960: 0082e5b3    or      a1, t0, s0              a1 &lt;- 52
+&gt;   5964: 40600433    neg     s0, t1                  s0 &lt;- -1964
+&gt;   5968: 0085e533    or      a0, a1, s0              a0 &lt;- -1932
+&gt;   5972: 406005b3    neg     a1, t1                  a1 &lt;- -1964
+&gt;   5976: 006485b3    add     a1, s1, t1              a1 &lt;- 3928
+&gt;   5980: 408502b3    sub     t0, a0, s0              t0 &lt;- 32
+&gt;   5984: 406485b3    sub     a1, s1, t1              a1 &lt;- 0
+&gt;   5988: 00558533    add     a0, a1, t0              a0 &lt;- 32
+&gt;   5992: 0054f333    and     t1, s1, t0              t1 &lt;- 32
+&gt;   5996: 0094f433    and     s0, s1, s1              s0 &lt;- 1964
+&gt;   6000: 0052e4b3    or      s1, t0, t0              s1 &lt;- 32
+255,284c455,505
+&lt;   6028: 00a2c5b3    xor     zero, a0, t0            zero &lt;- 788
+&lt;   6032: 0062e2b3    or      zero, t1, t0            zero &lt;- -114
+&lt;   6036: 0094c5b3    xor     zero, s1, s1            zero &lt;- 0
+&lt;   6040: 40a005b3      6044: 0082f4b3    and     zero, s0, t0            zero &lt;- 526
+&lt;   6048: 00934433    xor     zero, s1, t1            zero &lt;- -480
+&lt;   6052: 406582b3      6056: 009504b3      6060: 00b5e533    or      zero, a1, a1            zero &lt;- 1698
+&lt;   6064: 409004b3      6068: 408404b3      6072: 405004b3      6076: 00a37333    and     zero, a0, t1            zero &lt;- 128
+&lt;   6080: 40a00533      6084: 005565b3    or      zero, t0, a0            zero &lt;- -1122
+&lt;   6088: 40650433      6092: 00a34533    xor     zero, a0, t1            zero &lt;- -742
+&lt;   6096: 006505b3      6100: 009442b3    xor     zero, s1, s0            zero &lt;- -1569
+&lt;   6104: 0092e2b3    or      zero, s1, t0            zero &lt;- -1106
+&lt;   6108: 00b5c5b3    xor     zero, a1, a1            zero &lt;- 0
+&lt;   6112: 409585b3      6116: 40900433      6120: 409002b3      6124: 00a56333    or      zero, a0, a0            zero &lt;- -1894
+&lt;   6128: 0054c433    xor     zero, t0, s1            zero &lt;- 46
+&lt;   6132: 406005b3      6136: 00b444b3    xor     zero, a1, s0            zero &lt;- 1245
+&lt;   6140: 0062f333    and     zero, t1, t0            zero &lt;- 384
+&lt;   6144: 40a00533      6148: 00b56533    or      zero, a1, a0            zero &lt;- -326
+&lt;   6152: 00a36533    or      zero, a0, t1            zero &lt;- -614
+&lt;   6156: 00a4c2b3    xor     zero, a0, s1            zero &lt;- 826
+&lt;   6160: 006345b3    xor     zero, t1, t1            zero &lt;- 0
+&lt;   6164: 40530333      6168: 0082e5b3    or      zero, s0, t0            zero &lt;- -1025
+&lt;   6172: 40a304b3      6176: 40500333      6180: 40500433      6184: 00a50333      6188: 008442b3    xor     zero, s0, s0            zero &lt;- 0
+&lt;   6192: 0052f333    and     zero, t0, t0            zero &lt;- -1138
+&lt;   6196: 00547533    and     zero, t0, s0            zero &lt;- 526
+&lt;   6200: 00636533    or      zero, t1, t1            zero &lt;- 1408
+&lt;   6204: 0052c433    xor     zero, t0, t0            zero &lt;- 0
+&lt;   6208: 00557533    and     zero, t0, a0            zero &lt;- -1910
+&lt;   6212: 00656333    or      zero, t1, a0            zero &lt;- -614
+&lt;   6216: 0052f433    and     zero, t0, t0            zero &lt;- -1138
+&lt;   6220: 408002b3      6224: 406402b3      6228: 21d00513    li      a0, 541                 a0 &lt;- 541
+---
+&gt;   6028: 00a2c5b3    xor     a1, t0, a0              a1 &lt;- 788
+&gt;   6032: 0062e2b3    or      t0, t0, t1              t0 &lt;- -114
+&gt;   6036: 0094c5b3    xor     a1, s1, s1              a1 &lt;- 0
+&gt;   6040: 40a005b3    neg     a1, a0                  a1 &lt;- 1894
+&gt;   6044: 0082f4b3    and     s1, t0, s0              s1 &lt;- 526
+&gt;   6048: 00934433    xor     s0, t1, s1              s0 &lt;- 1934
+&gt;   6052: 406582b3    sub     t0, a1, t1              t0 &lt;- 486
+&gt;   6056: 009504b3    add     s1, a0, s1              s1 &lt;- -1368
+&gt;   6060: 00b5e533    or      a0, a1, a1              a0 &lt;- 1894
+&gt;   6064: 409004b3    neg     s1, s1                  s1 &lt;- 1368
+&gt;   6068: 408404b3    sub     s1, s0, s0              s1 &lt;- 0
+&gt;   6072: 405004b3    neg     s1, t0                  s1 &lt;- -486
+&gt;   6076: 00a37333    and     t1, t1, a0              t1 &lt;- 1280
+&gt;   6080: 40a00533    neg     a0, a0                  a0 &lt;- -1894
+&gt;   6084: 005565b3    or      a1, a0, t0              a1 &lt;- -1538
+&gt;   6088: 40650433    sub     s0, a0, t1              s0 &lt;- -3174
+&gt;   6092: 00a34533    xor     a0, t1, a0              a0 &lt;- -614
+&gt;   6096: 006505b3    add     a1, a0, t1              a1 &lt;- 666
+&gt;   6100: 009442b3    xor     t0, s0, s1              t0 &lt;- 3456
+&gt;   6104: 0092e2b3    or      t0, t0, s1              t0 &lt;- -102
+&gt;   6108: 00b5c5b3    xor     a1, a1, a1              a1 &lt;- 0
+&gt;   6112: 409585b3    sub     a1, a1, s1              a1 &lt;- 486
+&gt;   6116: 40900433    neg     s0, s1                  s0 &lt;- 486
+&gt;   6120: 409002b3    neg     t0, s1                  t0 &lt;- 486
+&gt;   6124: 00a56333    or      t1, a0, a0              t1 &lt;- -614
+&gt;   6128: 0054c433    xor     s0, s1, t0              s0 &lt;- -4
+&gt;   6132: 406005b3    neg     a1, t1                  a1 &lt;- 614
+&gt;   6136: 00b444b3    xor     s1, s0, a1              s1 &lt;- -614
+&gt;   6140: 0062f333    and     t1, t0, t1              t1 &lt;- 386
+&gt;   6144: 40a00533    neg     a0, a0                  a0 &lt;- 614
+&gt;   6148: 00b56533    or      a0, a0, a1              a0 &lt;- 614
+&gt;   6152: 00a36533    or      a0, t1, a0              a0 &lt;- 998
+&gt;   6156: 00a4c2b3    xor     t0, s1, a0              t0 &lt;- -388
+&gt;   6160: 006345b3    xor     a1, t1, t1              a1 &lt;- 0
+&gt;   6164: 40530333    sub     t1, t1, t0              t1 &lt;- 774
+&gt;   6168: 0082e5b3    or      a1, t0, s0              a1 &lt;- -4
+&gt;   6172: 40a304b3    sub     s1, t1, a0              s1 &lt;- -224
+&gt;   6176: 40500333    neg     t1, t0                  t1 &lt;- 388
+&gt;   6180: 40500433    neg     s0, t0                  s0 &lt;- 388
+&gt;   6184: 00a50333    add     t1, a0, a0              t1 &lt;- 1996
+&gt;   6188: 008442b3    xor     t0, s0, s0              t0 &lt;- 0
+&gt;   6192: 0052f333    and     t1, t0, t0              t1 &lt;- 0
+&gt;   6196: 00547533    and     a0, s0, t0              a0 &lt;- 0
+&gt;   6200: 00636533    or      a0, t1, t1              a0 &lt;- 0
+&gt;   6204: 0052c433    xor     s0, t0, t0              s0 &lt;- 0
+&gt;   6208: 00557533    and     a0, a0, t0              a0 &lt;- 0
+&gt;   6212: 00656333    or      t1, a0, t1              t1 &lt;- 0
+&gt;   6216: 0052f433    and     s0, t0, t0              s0 &lt;- 0
+&gt;   6220: 408002b3    neg     t0, s0                  t0 &lt;- 0
+&gt;   6224: 406402b3    sub     t0, s0, t1              t0 &lt;- 0
+&gt;   6228: 21d00513    li      a0, 541                 a0 &lt;- 541
+290,315c511,561
+&lt;   6252: 0092e333    or      zero, s1, t0            zero &lt;- -273
+&lt;   6256: 00a482b3      6260: 00a5f533    and     zero, a0, a1            zero &lt;- 13
+&lt;   6264: 00a305b3      6268: 405004b3      6272: 00940433      6276: 00b344b3    xor     zero, a1, t1            zero &lt;- 1268
+&lt;   6280: 008304b3      6284: 00a4f2b3    and     zero, a0, s1            zero &lt;- 525
+&lt;   6288: 00a2f333    and     zero, a0, t0            zero &lt;- 13
+&lt;   6292: 405304b3      6296: 00654433    xor     zero, t1, a0            zero &lt;- -252
+&lt;   6300: 00936333    or      zero, s1, t1            zero &lt;- -1
+&lt;   6304: 008374b3    and     zero, s0, t1            zero &lt;- 264
+&lt;   6308: 40a004b3      6312: 00658333      6316: 00a48333      6320: 40b304b3      6324: 406485b3      6328: 00b34333    xor     zero, a1, t1            zero &lt;- 1268
+&lt;   6332: 00a58533      6336: 00a342b3    xor     zero, a0, t1            zero &lt;- -252
+&lt;   6340: 009365b3    or      zero, s1, t1            zero &lt;- -1
+&lt;   6344: 40b485b3      6348: 009344b3    xor     zero, s1, t1            zero &lt;- 2038
+&lt;   6352: 00530433      6356: 0095e433    or      zero, s1, a1            zero &lt;- -1041
+&lt;   6360: 409002b3      6364: 006285b3      6368: 00a37433    and     zero, a0, t1            zero &lt;- 25
+&lt;   6372: 009484b3      6376: 00b5c433    xor     zero, a1, a1            zero &lt;- 0
+&lt;   6380: 00a57533    and     zero, a0, a0            zero &lt;- 541
+&lt;   6384: 40b00333      6388: 40900333      6392: 00547333    and     zero, t0, s0            zero &lt;- 142
+&lt;   6396: 00b57333    and     zero, a1, a0            zero &lt;- 13
+&lt;   6400: 0082f2b3    and     zero, s0, t0            zero &lt;- 142
+&lt;   6404: 00b54333    xor     zero, a1, a0            zero &lt;- -1040
+&lt;   6408: 406002b3      6412: 00828533      6416: 0052f433    and     zero, t0, t0            zero &lt;- 1231
+&lt;   6420: 00a474b3    and     zero, a0, s0            zero &lt;- 524
+&lt;   6424: 40b505b3      6428: 40900533      6432: 405484b3      6436: 005542b3    xor     zero, t0, a0            zero &lt;- 1746
+&lt;   6440: 00a2e2b3    or      zero, a0, t0            zero &lt;- 1759
+&lt;   6444: 00a4f433    and     zero, a0, s1            zero &lt;- 525
+&lt;   6448: 00858533      6452: c5300513    li      a0, -941                a0 &lt;- -941
+---
+&gt;   6252: 0092e333    or      t1, t0, s1              t1 &lt;- -273
+&gt;   6256: 00a482b3    add     t0, s1, a0              t0 &lt;- -756
+&gt;   6260: 00a5f533    and     a0, a1, a0              a0 &lt;- 13
+&gt;   6264: 00a305b3    add     a1, t1, a0              a1 &lt;- -260
+&gt;   6268: 405004b3    neg     s1, t0                  s1 &lt;- 756
+&gt;   6272: 00940433    add     s0, s0, s1              s0 &lt;- 1698
+&gt;   6276: 00b344b3    xor     s1, t1, a1              s1 &lt;- 19
+&gt;   6280: 008304b3    add     s1, t1, s0              s1 &lt;- 1425
+&gt;   6284: 00a4f2b3    and     t0, s1, a0              t0 &lt;- 1
+&gt;   6288: 00a2f333    and     t1, t0, a0              t1 &lt;- 1
+&gt;   6292: 405304b3    sub     s1, t1, t0              s1 &lt;- 0
+&gt;   6296: 00654433    xor     s0, a0, t1              s0 &lt;- 12
+&gt;   6300: 00936333    or      t1, t1, s1              t1 &lt;- 1
+&gt;   6304: 008374b3    and     s1, t1, s0              s1 &lt;- 0
+&gt;   6308: 40a004b3    neg     s1, a0                  s1 &lt;- -13
+&gt;   6312: 00658333    add     t1, a1, t1              t1 &lt;- -259
+&gt;   6316: 00a48333    add     t1, s1, a0              t1 &lt;- 0
+&gt;   6320: 40b304b3    sub     s1, t1, a1              s1 &lt;- 260
+&gt;   6324: 406485b3    sub     a1, s1, t1              a1 &lt;- 260
+&gt;   6328: 00b34333    xor     t1, t1, a1              t1 &lt;- 260
+&gt;   6332: 00a58533    add     a0, a1, a0              a0 &lt;- 273
+&gt;   6336: 00a342b3    xor     t0, t1, a0              t0 &lt;- 21
+&gt;   6340: 009365b3    or      a1, t1, s1              a1 &lt;- 260
+&gt;   6344: 40b485b3    sub     a1, s1, a1              a1 &lt;- 0
+&gt;   6348: 009344b3    xor     s1, t1, s1              s1 &lt;- 0
+&gt;   6352: 00530433    add     s0, t1, t0              s0 &lt;- 281
+&gt;   6356: 0095e433    or      s0, a1, s1              s0 &lt;- 0
+&gt;   6360: 409002b3    neg     t0, s1                  t0 &lt;- 0
+&gt;   6364: 006285b3    add     a1, t0, t1              a1 &lt;- 260
+&gt;   6368: 00a37433    and     s0, t1, a0              s0 &lt;- 256
+&gt;   6372: 009484b3    add     s1, s1, s1              s1 &lt;- 0
+&gt;   6376: 00b5c433    xor     s0, a1, a1              s0 &lt;- 0
+&gt;   6380: 00a57533    and     a0, a0, a0              a0 &lt;- 273
+&gt;   6384: 40b00333    neg     t1, a1                  t1 &lt;- -260
+&gt;   6388: 40900333    neg     t1, s1                  t1 &lt;- 0
+&gt;   6392: 00547333    and     t1, s0, t0              t1 &lt;- 0
+&gt;   6396: 00b57333    and     t1, a0, a1              t1 &lt;- 256
+&gt;   6400: 0082f2b3    and     t0, t0, s0              t0 &lt;- 0
+&gt;   6404: 00b54333    xor     t1, a0, a1              t1 &lt;- 21
+&gt;   6408: 406002b3    neg     t0, t1                  t0 &lt;- -21
+&gt;   6412: 00828533    add     a0, t0, s0              a0 &lt;- -21
+&gt;   6416: 0052f433    and     s0, t0, t0              s0 &lt;- -21
+&gt;   6420: 00a474b3    and     s1, s0, a0              s1 &lt;- -21
+&gt;   6424: 40b505b3    sub     a1, a0, a1              a1 &lt;- -281
+&gt;   6428: 40900533    neg     a0, s1                  a0 &lt;- 21
+&gt;   6432: 405484b3    sub     s1, s1, t0              s1 &lt;- 0
+&gt;   6436: 005542b3    xor     t0, a0, t0              t0 &lt;- -2
+&gt;   6440: 00a2e2b3    or      t0, t0, a0              t0 &lt;- -1
+&gt;   6444: 00a4f433    and     s0, s1, a0              s0 &lt;- 0
+&gt;   6448: 00858533    add     a0, a1, s0              a0 &lt;- -281
+&gt;   6452: c5300513    li      a0, -941                a0 &lt;- -941
+321,346c567,617
+&lt;   6476: 008342b3    xor     zero, s0, t1            zero &lt;- -334
+&lt;   6480: 0062c4b3    xor     zero, t1, t0            zero &lt;- 397
+&lt;   6484: 40b005b3      6488: 00937433    and     zero, s1, t1            zero &lt;- -979
+&lt;   6492: 00836533    or      zero, s0, t1            zero &lt;- -1
+&lt;   6496: 40b402b3      6500: 0085f5b3    and     zero, s0, a1            zero &lt;- 320
+&lt;   6504: 40a28533      6508: 00958533      6512: 00b4f2b3    and     zero, a1, s1            zero &lt;- 32
+&lt;   6516: 40500533      6520: 0085e2b3    or      zero, s0, a1            zero &lt;- 1021
+&lt;   6524: 00b5e433    or      zero, a1, a1            zero &lt;- 368
+&lt;   6528: 00a30333      6532: 40b30433      6536: 40850533      6540: 409484b3      6544: 00a372b3    and     zero, a0, t1            zero &lt;- -941
+&lt;   6548: 40500533      6552: 00658333      6556: 406005b3      6560: 40940533      6564: 0054c533    xor     zero, t0, s1            zero &lt;- 95
+&lt;   6568: 40a58433      6572: 406404b3      6576: 005542b3    xor     zero, t0, a0            zero &lt;- 161
+&lt;   6580: 00a344b3    xor     zero, a0, t1            zero &lt;- 300
+&lt;   6584: 00b4c5b3    xor     zero, a1, s1            zero &lt;- -547
+&lt;   6588: 00a375b3    and     zero, a0, t1            zero &lt;- -941
+&lt;   6592: 0065c2b3    xor     zero, t1, a1            zero &lt;- -1009
+&lt;   6596: 00a46433    or      zero, a0, s0            zero &lt;- -33
+&lt;   6600: 00a444b3    xor     zero, a0, s0            zero &lt;- -98
+&lt;   6604: 40650333      6608: 00657433    and     zero, t1, a0            zero &lt;- -941
+&lt;   6612: 408305b3      6616: 00950333      6620: 00857533    and     zero, s0, a0            zero &lt;- 65
+&lt;   6624: 40b004b3      6628: 0062e2b3    or      zero, t1, t0            zero &lt;- -513
+&lt;   6632: 40b485b3      6636: 40650533      6640: 405402b3      6644: 406404b3      6648: 406005b3      6652: 00b4f333    and     zero, a1, s1            zero &lt;- 32
+&lt;   6656: 00a54533    xor     zero, a0, a0            zero &lt;- 0
+&lt;   6660: 0052f2b3    and     zero, t0, t0            zero &lt;- -782
+&lt;   6664: 00a544b3    xor     zero, a0, a0            zero &lt;- 0
+&lt;   6668: 0084e4b3    or      zero, s0, s1            zero &lt;- -19
+&lt;   6672: 40b58433      6676: 5e800513    li      a0, 1512                a0 &lt;- 1512
+---
+&gt;   6476: 008342b3    xor     t0, t1, s0              t0 &lt;- -334
+&gt;   6480: 0062c4b3    xor     s1, t0, t1              s1 &lt;- 973
+&gt;   6484: 40b005b3    neg     a1, a1                  a1 &lt;- -368
+&gt;   6488: 00937433    and     s0, t1, s1              s0 &lt;- 333
+&gt;   6492: 00836533    or      a0, t1, s0              a0 &lt;- -641
+&gt;   6496: 40b402b3    sub     t0, s0, a1              t0 &lt;- 701
+&gt;   6500: 0085f5b3    and     a1, a1, s0              a1 &lt;- 0
+&gt;   6504: 40a28533    sub     a0, t0, a0              a0 &lt;- 1342
+&gt;   6508: 00958533    add     a0, a1, s1              a0 &lt;- 973
+&gt;   6512: 00b4f2b3    and     t0, s1, a1              t0 &lt;- 0
+&gt;   6516: 40500533    neg     a0, t0                  a0 &lt;- 0
+&gt;   6520: 0085e2b3    or      t0, a1, s0              t0 &lt;- 333
+&gt;   6524: 00b5e433    or      s0, a1, a1              s0 &lt;- 0
+&gt;   6528: 00a30333    add     t1, t1, a0              t1 &lt;- -641
+&gt;   6532: 40b30433    sub     s0, t1, a1              s0 &lt;- -641
+&gt;   6536: 40850533    sub     a0, a0, s0              a0 &lt;- 641
+&gt;   6540: 409484b3    sub     s1, s1, s1              s1 &lt;- 0
+&gt;   6544: 00a372b3    and     t0, t1, a0              t0 &lt;- 1
+&gt;   6548: 40500533    neg     a0, t0                  a0 &lt;- -1
+&gt;   6552: 00658333    add     t1, a1, t1              t1 &lt;- -641
+&gt;   6556: 406005b3    neg     a1, t1                  a1 &lt;- 641
+&gt;   6560: 40940533    sub     a0, s0, s1              a0 &lt;- -641
+&gt;   6564: 0054c533    xor     a0, s1, t0              a0 &lt;- 1
+&gt;   6568: 40a58433    sub     s0, a1, a0              s0 &lt;- 640
+&gt;   6572: 406404b3    sub     s1, s0, t1              s1 &lt;- 1281
+&gt;   6576: 005542b3    xor     t0, a0, t0              t0 &lt;- 0
+&gt;   6580: 00a344b3    xor     s1, t1, a0              s1 &lt;- -642
+&gt;   6584: 00b4c5b3    xor     a1, s1, a1              a1 &lt;- -1
+&gt;   6588: 00a375b3    and     a1, t1, a0              a1 &lt;- 1
+&gt;   6592: 0065c2b3    xor     t0, a1, t1              t0 &lt;- -642
+&gt;   6596: 00a46433    or      s0, s0, a0              s0 &lt;- 641
+&gt;   6600: 00a444b3    xor     s1, s0, a0              s1 &lt;- 640
+&gt;   6604: 40650333    sub     t1, a0, t1              t1 &lt;- 642
+&gt;   6608: 00657433    and     s0, a0, t1              s0 &lt;- 0
+&gt;   6612: 408305b3    sub     a1, t1, s0              a1 &lt;- 642
+&gt;   6616: 00950333    add     t1, a0, s1              t1 &lt;- 641
+&gt;   6620: 00857533    and     a0, a0, s0              a0 &lt;- 0
+&gt;   6624: 40b004b3    neg     s1, a1                  s1 &lt;- -642
+&gt;   6628: 0062e2b3    or      t0, t0, t1              t0 &lt;- -1
+&gt;   6632: 40b485b3    sub     a1, s1, a1              a1 &lt;- -1284
+&gt;   6636: 40650533    sub     a0, a0, t1              a0 &lt;- -641
+&gt;   6640: 405402b3    sub     t0, s0, t0              t0 &lt;- 1
+&gt;   6644: 406404b3    sub     s1, s0, t1              s1 &lt;- -641
+&gt;   6648: 406005b3    neg     a1, t1                  a1 &lt;- -641
+&gt;   6652: 00b4f333    and     t1, s1, a1              t1 &lt;- -641
+&gt;   6656: 00a54533    xor     a0, a0, a0              a0 &lt;- 0
+&gt;   6660: 0052f2b3    and     t0, t0, t0              t0 &lt;- 1
+&gt;   6664: 00a544b3    xor     s1, a0, a0              s1 &lt;- 0
+&gt;   6668: 0084e4b3    or      s1, s1, s0              s1 &lt;- 0
+&gt;   6672: 40b58433    sub     s0, a1, a1              s0 &lt;- 0
+&gt;   6676: 5e800513    li      a0, 1512                a0 &lt;- 1512
+352,379c623,673
+&lt;   6700: 40a00333      6704: 405004b3      6708: 005472b3    and     zero, t0, s0            zero &lt;- 1041
+&lt;   6712: 00650533      6716: 40b30333      6720: 40600433      6724: 00b54533    xor     zero, a1, a0            zero &lt;- 471
+&lt;   6728: 0094e533    or      zero, s1, s1            zero &lt;- 26
+&lt;   6732: 00b542b3    xor     zero, a1, a0            zero &lt;- 471
+&lt;   6736: 40a005b3      6740: 00b46433    or      zero, a1, s0            zero &lt;- 1279
+&lt;   6744: 0062f5b3    and     zero, t1, t0            zero &lt;- 21
+&lt;   6748: 00b5f5b3    and     zero, a1, a1            zero &lt;- 1087
+&lt;   6752: 40500533      6756: 009504b3      6760: 00b5c2b3    xor     zero, a1, a1            zero &lt;- 0
+&lt;   6764: 006445b3    xor     zero, t1, s0            zero &lt;- -988
+&lt;   6768: 409584b3      6772: 40b002b3      6776: 00658333      6780: 409005b3      6784: 00a5c533    xor     zero, a0, a1            zero &lt;- 471
+&lt;   6788: 40b48433      6792: 00a572b3    and     zero, a0, a0            zero &lt;- 1512
+&lt;   6796: 0092c433    xor     zero, s1, t0            zero &lt;- 1807
+&lt;   6800: 40600333      6804: 0085f4b3    and     zero, s0, a1            zero &lt;- 1049
+&lt;   6808: 0064f4b3    and     zero, t1, s1            zero &lt;- 24
+&lt;   6812: 009342b3    xor     zero, s1, t1            zero &lt;- -1817
+&lt;   6816: 00848533      6820: 00a4e333    or      zero, a0, s1            zero &lt;- 1530
+&lt;   6824: 00b4e533    or      zero, a1, s1            zero &lt;- 1087
+&lt;   6828: 00548533      6832: 0062e4b3    or      zero, t1, t0            zero &lt;- -3
+&lt;   6836: 00a445b3    xor     zero, a0, s0            zero &lt;- 305
+&lt;   6840: 00a5f533    and     zero, a0, a1            zero &lt;- 1064
+&lt;   6844: 40b48433      6848: 40540533      6852: 0052f333    and     zero, t0, t0            zero &lt;- 1813
+&lt;   6856: 0085c333    xor     zero, s0, a1            zero &lt;- 230
+&lt;   6860: 00a54333    xor     zero, a0, a0            zero &lt;- 0
+&lt;   6864: 40600533      6868: 00547533    and     zero, t0, s0            zero &lt;- 1041
+&lt;   6872: 00a36433    or      zero, a0, t1            zero &lt;- -515
+&lt;   6876: 00b464b3    or      zero, a1, s0            zero &lt;- 1279
+&lt;   6880: 406004b3      6884: 0055e4b3    or      zero, t0, a1            zero &lt;- 1855
+&lt;   6888: 408005b3      6892: 40a285b3      6896: 008484b3      6900: 1ef00513    li      a0, 495                 a0 &lt;- 495
+---
+&gt;   6700: 40a00333    neg     t1, a0                  t1 &lt;- -1512
+&gt;   6704: 405004b3    neg     s1, t0                  s1 &lt;- -1813
+&gt;   6708: 005472b3    and     t0, s0, t0              t0 &lt;- 1041
+&gt;   6712: 00650533    add     a0, a0, t1              a0 &lt;- 0
+&gt;   6716: 40b30333    sub     t1, t1, a1              t1 &lt;- -2599
+&gt;   6720: 40600433    neg     s0, t1                  s0 &lt;- 2599
+&gt;   6724: 00b54533    xor     a0, a0, a1              a0 &lt;- 1087
+&gt;   6728: 0094e533    or      a0, s1, s1              a0 &lt;- -1813
+&gt;   6732: 00b542b3    xor     t0, a0, a1              t0 &lt;- -812
+&gt;   6736: 40a005b3    neg     a1, a0                  a1 &lt;- 1813
+&gt;   6740: 00b46433    or      s0, s0, a1              s0 &lt;- 3895
+&gt;   6744: 0062f5b3    and     a1, t0, t1              a1 &lt;- -2864
+&gt;   6748: 00b5f5b3    and     a1, a1, a1              a1 &lt;- -2864
+&gt;   6752: 40500533    neg     a0, t0                  a0 &lt;- 812
+&gt;   6756: 009504b3    add     s1, a0, s1              s1 &lt;- -1001
+&gt;   6760: 00b5c2b3    xor     t0, a1, a1              t0 &lt;- 0
+&gt;   6764: 006445b3    xor     a1, s0, t1              a1 &lt;- -1298
+&gt;   6768: 409584b3    sub     s1, a1, s1              s1 &lt;- -297
+&gt;   6772: 40b002b3    neg     t0, a1                  t0 &lt;- 1298
+&gt;   6776: 00658333    add     t1, a1, t1              t1 &lt;- -3897
+&gt;   6780: 409005b3    neg     a1, s1                  a1 &lt;- 297
+&gt;   6784: 00a5c533    xor     a0, a1, a0              a0 &lt;- 517
+&gt;   6788: 40b48433    sub     s0, s1, a1              s0 &lt;- -594
+&gt;   6792: 00a572b3    and     t0, a0, a0              t0 &lt;- 517
+&gt;   6796: 0092c433    xor     s0, t0, s1              s0 &lt;- -814
+&gt;   6800: 40600333    neg     t1, t1                  t1 &lt;- 3897
+&gt;   6804: 0085f4b3    and     s1, a1, s0              s1 &lt;- 0
+&gt;   6808: 0064f4b3    and     s1, s1, t1              s1 &lt;- 0
+&gt;   6812: 009342b3    xor     t0, t1, s1              t0 &lt;- 3897
+&gt;   6816: 00848533    add     a0, s1, s0              a0 &lt;- -814
+&gt;   6820: 00a4e333    or      t1, s1, a0              t1 &lt;- -814
+&gt;   6824: 00b4e533    or      a0, s1, a1              a0 &lt;- 297
+&gt;   6828: 00548533    add     a0, s1, t0              a0 &lt;- 3897
+&gt;   6832: 0062e4b3    or      s1, t0, t1              s1 &lt;- -5
+&gt;   6836: 00a445b3    xor     a1, s0, a0              a1 &lt;- -3093
+&gt;   6840: 00a5f533    and     a0, a1, a0              a0 &lt;- 809
+&gt;   6844: 40b48433    sub     s0, s1, a1              s0 &lt;- 3088
+&gt;   6848: 40540533    sub     a0, s0, t0              a0 &lt;- -809
+&gt;   6852: 0052f333    and     t1, t0, t0              t1 &lt;- 3897
+&gt;   6856: 0085c333    xor     t1, a1, s0              t1 &lt;- -5
+&gt;   6860: 00a54333    xor     t1, a0, a0              t1 &lt;- 0
+&gt;   6864: 40600533    neg     a0, t1                  a0 &lt;- 0
+&gt;   6868: 00547533    and     a0, s0, t0              a0 &lt;- 3088
+&gt;   6872: 00a36433    or      s0, t1, a0              s0 &lt;- 3088
+&gt;   6876: 00b464b3    or      s1, s0, a1              s1 &lt;- -5
+&gt;   6880: 406004b3    neg     s1, t1                  s1 &lt;- 0
+&gt;   6884: 0055e4b3    or      s1, a1, t0              s1 &lt;- -5
+&gt;   6888: 408005b3    neg     a1, s0                  a1 &lt;- -3088
+&gt;   6892: 40a285b3    sub     a1, t0, a0              a1 &lt;- 809
+&gt;   6896: 008484b3    add     s1, s1, s0              s1 &lt;- 3083
+&gt;   6900: 1ef00513    li      a0, 495                 a0 &lt;- 495
+385,412c679,729
+&lt;   6924: 0064e533    or      zero, t1, s1            zero &lt;- -81
+&lt;   6928: 00834433    xor     zero, s0, t1            zero &lt;- -307
+&lt;   6932: 00a57333    and     zero, a0, a0            zero &lt;- 495
+&lt;   6936: 0082e5b3    or      zero, s0, t0            zero &lt;- -530
+&lt;   6940: 406004b3      6944: 40b004b3      6948: 005445b3    xor     zero, t0, s0            zero &lt;- -626
+&lt;   6952: 00657533    and     zero, t1, a0            zero &lt;- 427
+&lt;   6956: 40b305b3      6960: 00a5c533    xor     zero, a0, a1            zero &lt;- -175
+&lt;   6964: 40b58333      6968: 005285b3      6972: 00a5e533    or      zero, a0, a1            zero &lt;- -1
+&lt;   6976: 00650433      6980: 0094e533    or      zero, s1, s1            zero &lt;- -977
+&lt;   6984: 008465b3    or      zero, s0, s0            zero &lt;- 358
+&lt;   6988: 00b285b3      6992: 00a372b3    and     zero, a0, t1            zero &lt;- 427
+&lt;   6996: 409402b3      7000: 0095c2b3    xor     zero, s1, a1            zero &lt;- 657
+&lt;   7004: 00b2e2b3    or      zero, a1, t0            zero &lt;- -258
+&lt;   7008: 0064e5b3    or      zero, t1, s1            zero &lt;- -81
+&lt;   7012: 00b502b3      7016: 00a585b3      7020: 40b00533      7024: 40a002b3      7028: 0054e533    or      zero, t0, s1            zero &lt;- -785
+&lt;   7032: 00a505b3      7036: 408005b3      7040: 409004b3      7044: 0065c433    xor     zero, t1, a1            zero &lt;- 277
+&lt;   7048: 008305b3      7052: 0094c5b3    xor     zero, s1, s1            zero &lt;- 0
+&lt;   7056: 00830333      7060: 00636333    or      zero, t1, t1            zero &lt;- -85
+&lt;   7064: 0084c4b3    xor     zero, s0, s1            zero &lt;- -695
+&lt;   7068: 00a472b3    and     zero, a0, s0            zero &lt;- 358
+&lt;   7072: 0054f2b3    and     zero, t0, s1            zero &lt;- -984
+&lt;   7076: 408002b3      7080: 00830433      7084: 00630333      7088: 00b2f533    and     zero, a1, t0            zero &lt;- -856
+&lt;   7092: 00a4c333    xor     zero, a0, s1            zero &lt;- -576
+&lt;   7096: 00b4e433    or      zero, a1, s1            zero &lt;- -321
+&lt;   7100: 00a2f533    and     zero, a0, t0            zero &lt;- 232
+&lt;   7104: 00647333    and     zero, t1, s0            zero &lt;- 290
+&lt;   7108: 408505b3      7112: 00934333    xor     zero, s1, t1            zero &lt;- 900
+&lt;   7116: 40528433      7120: 405004b3      7124: 24200513    li      a0, 578                 a0 &lt;- 578
+---
+&gt;   6924: 0064e533    or      a0, s1, t1              a0 &lt;- -81
+&gt;   6928: 00834433    xor     s0, t1, s0              s0 &lt;- -307
+&gt;   6932: 00a57333    and     t1, a0, a0              t1 &lt;- -81
+&gt;   6936: 0082e5b3    or      a1, t0, s0              a1 &lt;- -275
+&gt;   6940: 406004b3    neg     s1, t1                  s1 &lt;- 81
+&gt;   6944: 40b004b3    neg     s1, a1                  s1 &lt;- 275
+&gt;   6948: 005445b3    xor     a1, s0, t0              a1 &lt;- 549
+&gt;   6952: 00657533    and     a0, a0, t1              a0 &lt;- -81
+&gt;   6956: 40b305b3    sub     a1, t1, a1              a1 &lt;- -630
+&gt;   6960: 00a5c533    xor     a0, a1, a0              a0 &lt;- 549
+&gt;   6964: 40b58333    sub     t1, a1, a1              t1 &lt;- 0
+&gt;   6968: 005285b3    add     a1, t0, t0              a1 &lt;- -1584
+&gt;   6972: 00a5e533    or      a0, a1, a0              a0 &lt;- -1035
+&gt;   6976: 00650433    add     s0, a0, t1              s0 &lt;- -1035
+&gt;   6980: 0094e533    or      a0, s1, s1              a0 &lt;- 275
+&gt;   6984: 008465b3    or      a1, s0, s0              a1 &lt;- -1035
+&gt;   6988: 00b285b3    add     a1, t0, a1              a1 &lt;- -1827
+&gt;   6992: 00a372b3    and     t0, t1, a0              t0 &lt;- 0
+&gt;   6996: 409402b3    sub     t0, s0, s1              t0 &lt;- -1310
+&gt;   7000: 0095c2b3    xor     t0, a1, s1              t0 &lt;- -1586
+&gt;   7004: 00b2e2b3    or      t0, t0, a1              t0 &lt;- -1569
+&gt;   7008: 0064e5b3    or      a1, s1, t1              a1 &lt;- 275
+&gt;   7012: 00b502b3    add     t0, a0, a1              t0 &lt;- 550
+&gt;   7016: 00a585b3    add     a1, a1, a0              a1 &lt;- 550
+&gt;   7020: 40b00533    neg     a0, a1                  a0 &lt;- -550
+&gt;   7024: 40a002b3    neg     t0, a0                  t0 &lt;- 550
+&gt;   7028: 0054e533    or      a0, s1, t0              a0 &lt;- 823
+&gt;   7032: 00a505b3    add     a1, a0, a0              a1 &lt;- 1646
+&gt;   7036: 408005b3    neg     a1, s0                  a1 &lt;- 1035
+&gt;   7040: 409004b3    neg     s1, s1                  s1 &lt;- -275
+&gt;   7044: 0065c433    xor     s0, a1, t1              s0 &lt;- 1035
+&gt;   7048: 008305b3    add     a1, t1, s0              a1 &lt;- 1035
+&gt;   7052: 0094c5b3    xor     a1, s1, s1              a1 &lt;- 0
+&gt;   7056: 00830333    add     t1, t1, s0              t1 &lt;- 1035
+&gt;   7060: 00636333    or      t1, t1, t1              t1 &lt;- 1035
+&gt;   7064: 0084c4b3    xor     s1, s1, s0              s1 &lt;- -1306
+&gt;   7068: 00a472b3    and     t0, s0, a0              t0 &lt;- 3
+&gt;   7072: 0054f2b3    and     t0, s1, t0              t0 &lt;- 2
+&gt;   7076: 408002b3    neg     t0, s0                  t0 &lt;- -1035
+&gt;   7080: 00830433    add     s0, t1, s0              s0 &lt;- 2070
+&gt;   7084: 00630333    add     t1, t1, t1              t1 &lt;- 2070
+&gt;   7088: 00b2f533    and     a0, t0, a1              a0 &lt;- 0
+&gt;   7092: 00a4c333    xor     t1, s1, a0              t1 &lt;- -1306
+&gt;   7096: 00b4e433    or      s0, s1, a1              s0 &lt;- -1306
+&gt;   7100: 00a2f533    and     a0, t0, a0              a0 &lt;- 0
+&gt;   7104: 00647333    and     t1, s0, t1              t1 &lt;- -1306
+&gt;   7108: 408505b3    sub     a1, a0, s0              a1 &lt;- 1306
+&gt;   7112: 00934333    xor     t1, t1, s1              t1 &lt;- 0
+&gt;   7116: 40528433    sub     s0, t0, t0              s0 &lt;- 0
+&gt;   7120: 405004b3    neg     s1, t0                  s1 &lt;- 1035
+&gt;   7124: 24200513    li      a0, 578                 a0 &lt;- 578
+418,446c735,784
+&lt;   7148: 00b30333      7152: 0084f333    and     zero, s0, s1            zero &lt;- 960
+&lt;   7156: 0085e4b3    or      zero, s0, a1            zero &lt;- -1049
+&lt;   7160: 00b2f4b3    and     zero, a1, t0            zero &lt;- -1502
+&lt;   7164: 409402b3      7168: 406284b3      7172: 00a475b3    and     zero, a0, s0            zero &lt;- 576
+&lt;   7176: 40500433      7180: 00547333    and     zero, t0, s0            zero &lt;- -1408
+&lt;   7184: 00b56533    or      zero, a1, a0            zero &lt;- -1437
+&lt;   7188: 0094f533    and     zero, s1, s1            zero &lt;- 1016
+&lt;   7192: 00534433    xor     zero, t0, t1            zero &lt;- -1401
+&lt;   7196: 00b2f4b3    and     zero, a1, t0            zero &lt;- -1502
+&lt;   7200: 405002b3      7204: 0064c333    xor     zero, t1, s1            zero &lt;- 1989
+&lt;   7208: 00944333    xor     zero, s1, s0            zero &lt;- -1988
+&lt;   7212: 006572b3    and     zero, t1, a0            zero &lt;- 0
+&lt;   7216: 406005b3      7220: 0092e5b3    or      zero, s1, t0            zero &lt;- -6
+&lt;   7224: 40a482b3      7228: 00a564b3    or      zero, a0, a0            zero &lt;- 578
+&lt;   7232: 0084c5b3    xor     zero, s0, s1            zero &lt;- -1988
+&lt;   7236: 0085c533    xor     zero, s0, a1            zero &lt;- 423
+&lt;   7240: 00b54333    xor     zero, a1, a0            zero &lt;- -2015
+&lt;   7244: 409485b3      7248: 0094f433    and     zero, s1, s1            zero &lt;- 1016
+&lt;   7252: 40900433      7256: 0054f4b3    and     zero, t0, s1            zero &lt;- 696
+&lt;   7260: 40500333      7264: 0065c333    xor     zero, t1, a1            zero &lt;- -418
+&lt;   7268: 00a5e333    or      zero, a0, a1            zero &lt;- -1437
+&lt;   7272: 00a2e2b3    or      zero, a0, t0            zero &lt;- -262
+&lt;   7276: 40a585b3      7280: 006282b3      7284: 40630333      7288: 40a004b3      7292: 00b584b3      7296: 00a5f4b3    and     zero, a0, a1            zero &lt;- 578
+&lt;   7300: 00658333      7304: 008282b3      7308: 006575b3    and     zero, t1, a0            zero &lt;- 0
+&lt;   7312: 00a4e433    or      zero, a0, s1            zero &lt;- 1018
+&lt;   7316: 008575b3    and     zero, s0, a0            zero &lt;- 576
+&lt;   7320: 40a582b3      7324: 00834333    xor     zero, s0, t1            zero &lt;- -7
+&lt;   7328: 009444b3    xor     zero, s1, s0            zero &lt;- -1988
+&lt;   7332: 006502b3      7336: 406005b3      7340: 00b505b3      7344: 006465b3    or      zero, t1, s0            zero &lt;- -3
+---
+&gt;   7148: 00b30333    add     t1, t1, a1              t1 &lt;- -352
+&gt;   7152: 0084f333    and     t1, s1, s0              t1 &lt;- 960
+&gt;   7156: 0085e4b3    or      s1, a1, s0              s1 &lt;- -1049
+&gt;   7160: 00b2f4b3    and     s1, t0, a1              s1 &lt;- -1502
+&gt;   7164: 409402b3    sub     t0, s0, s1              t0 &lt;- 418
+&gt;   7168: 406284b3    sub     s1, t0, t1              s1 &lt;- -542
+&gt;   7172: 00a475b3    and     a1, s0, a0              a1 &lt;- 576
+&gt;   7176: 40500433    neg     s0, t0                  s0 &lt;- -418
+&gt;   7180: 00547333    and     t1, s0, t0              t1 &lt;- 2
+&gt;   7184: 00b56533    or      a0, a0, a1              a0 &lt;- 578
+&gt;   7188: 0094f533    and     a0, s1, s1              a0 &lt;- -542
+&gt;   7192: 00534433    xor     s0, t1, t0              s0 &lt;- 416
+&gt;   7196: 00b2f4b3    and     s1, t0, a1              s1 &lt;- 0
+&gt;   7200: 405002b3    neg     t0, t0                  t0 &lt;- -418
+&gt;   7204: 0064c333    xor     t1, s1, t1              t1 &lt;- 2
+&gt;   7208: 00944333    xor     t1, s0, s1              t1 &lt;- 416
+&gt;   7212: 006572b3    and     t0, a0, t1              t0 &lt;- 416
+&gt;   7216: 406005b3    neg     a1, t1                  a1 &lt;- -416
+&gt;   7220: 0092e5b3    or      a1, t0, s1              a1 &lt;- 416
+&gt;   7224: 40a482b3    sub     t0, s1, a0              t0 &lt;- 542
+&gt;   7228: 00a564b3    or      s1, a0, a0              s1 &lt;- -542
+&gt;   7232: 0084c5b3    xor     a1, s1, s0              a1 &lt;- -958
+&gt;   7236: 0085c533    xor     a0, a1, s0              a0 &lt;- -542
+&gt;   7240: 00b54333    xor     t1, a0, a1              t1 &lt;- 416
+&gt;   7244: 409485b3    sub     a1, s1, s1              a1 &lt;- 0
+&gt;   7248: 0094f433    and     s0, s1, s1              s0 &lt;- -542
+&gt;   7252: 40900433    neg     s0, s1                  s0 &lt;- 542
+&gt;   7256: 0054f4b3    and     s1, s1, t0              s1 &lt;- 2
+&gt;   7260: 40500333    neg     t1, t0                  t1 &lt;- -542
+&gt;   7264: 0065c333    xor     t1, a1, t1              t1 &lt;- -542
+&gt;   7268: 00a5e333    or      t1, a1, a0              t1 &lt;- -542
+&gt;   7272: 00a2e2b3    or      t0, t0, a0              t0 &lt;- -2
+&gt;   7276: 40a585b3    sub     a1, a1, a0              a1 &lt;- 542
+&gt;   7280: 006282b3    add     t0, t0, t1              t0 &lt;- -544
+&gt;   7284: 40630333    sub     t1, t1, t1              t1 &lt;- 0
+&gt;   7288: 40a004b3    neg     s1, a0                  s1 &lt;- 542
+&gt;   7292: 00b584b3    add     s1, a1, a1              s1 &lt;- 1084
+&gt;   7296: 00a5f4b3    and     s1, a1, a0              s1 &lt;- 2
+&gt;   7300: 00658333    add     t1, a1, t1              t1 &lt;- 542
+&gt;   7304: 008282b3    add     t0, t0, s0              t0 &lt;- -2
+&gt;   7308: 006575b3    and     a1, a0, t1              a1 &lt;- 2
+&gt;   7312: 00a4e433    or      s0, s1, a0              s0 &lt;- -542
+&gt;   7316: 008575b3    and     a1, a0, s0              a1 &lt;- -542
+&gt;   7320: 40a582b3    sub     t0, a1, a0              t0 &lt;- 0
+&gt;   7324: 00834333    xor     t1, t1, s0              t1 &lt;- -4
+&gt;   7328: 009444b3    xor     s1, s0, s1              s1 &lt;- -544
+&gt;   7332: 006502b3    add     t0, a0, t1              t0 &lt;- -546
+&gt;   7336: 406005b3    neg     a1, t1                  a1 &lt;- 4
+&gt;   7340: 00b505b3    add     a1, a0, a1              a1 &lt;- -538
+&gt;   7344: 006465b3    or      a1, s0, t1              a1 &lt;- -2
+453,479c791,840
+&lt;   7372: 0052f333    and     zero, t0, t0            zero &lt;- 693
+&lt;   7376: 0094f533    and     zero, s1, s1            zero &lt;- 181
+&lt;   7380: 008342b3    xor     zero, s0, t1            zero &lt;- -1580
+&lt;   7384: 409002b3      7388: 40b005b3      7392: 40500433      7396: 00528533      7400: 0094e5b3    or      zero, s1, s1            zero &lt;- 181
+&lt;   7404: 40800433      7408: 00a365b3    or      zero, a0, t1            zero &lt;- -514
+&lt;   7412: 00656433    or      zero, t1, a0            zero &lt;- -514
+&lt;   7416: 40500533      7420: 0055c5b3    xor     zero, t0, a1            zero &lt;- 1783
+&lt;   7424: 00540533      7428: 406285b3      7432: 0064c2b3    xor     zero, t1, s1            zero &lt;- -2037
+&lt;   7436: 00b4e4b3    or      zero, a1, s1            zero &lt;- 1271
+&lt;   7440: 008462b3    or      zero, s0, s0            zero &lt;- 362
+&lt;   7444: 00a2c2b3    xor     zero, a0, t0            zero &lt;- 1913
+&lt;   7448: 0094e2b3    or      zero, s1, s1            zero &lt;- 181
+&lt;   7452: 0054e4b3    or      zero, t0, s1            zero &lt;- 693
+&lt;   7456: 409282b3      7460: 0064f4b3    and     zero, t1, s1            zero &lt;- 180
+&lt;   7464: 40b002b3      7468: 409585b3      7472: 405484b3      7476: 005472b3    and     zero, t0, s0            zero &lt;- 32
+&lt;   7480: 005485b3      7484: 40600433      7488: 009462b3    or      zero, s1, s0            zero &lt;- 511
+&lt;   7492: 409005b3      7496: 0095e533    or      zero, s1, a1            zero &lt;- 1271
+&lt;   7500: 00a2c2b3    xor     zero, a0, t0            zero &lt;- 1913
+&lt;   7504: 0052f333    and     zero, t0, t0            zero &lt;- 693
+&lt;   7508: 40b585b3      7512: 406005b3      7516: 0052f533    and     zero, t0, t0            zero &lt;- 693
+&lt;   7520: 00a28433      7524: 00a5f433    and     zero, a0, a1            zero &lt;- 1088
+&lt;   7528: 00a44433    xor     zero, a0, s0            zero &lt;- 1190
+&lt;   7532: 40b004b3      7536: 00a5c2b3    xor     zero, a0, a1            zero &lt;- 398
+&lt;   7540: 00950533      7544: 0055e433    or      zero, t0, a1            zero &lt;- 1783
+&lt;   7548: 005365b3    or      zero, t0, t1            zero &lt;- -1345
+&lt;   7552: 009575b3    and     zero, s1, a0            zero &lt;- 132
+&lt;   7556: 00b504b3      7560: 00630433      7564: 408482b3      7568: 00a474b3    and     zero, a0, s0            zero &lt;- 328
+---
+&gt;   7372: 0052f333    and     t1, t0, t0              t1 &lt;- 693
+&gt;   7376: 0094f533    and     a0, s1, s1              a0 &lt;- 181
+&gt;   7380: 008342b3    xor     t0, t1, s0              t0 &lt;- 991
+&gt;   7384: 409002b3    neg     t0, s1                  t0 &lt;- -181
+&gt;   7388: 40b005b3    neg     a1, a1                  a1 &lt;- -1090
+&gt;   7392: 40500433    neg     s0, t0                  s0 &lt;- 181
+&gt;   7396: 00528533    add     a0, t0, t0              a0 &lt;- -362
+&gt;   7400: 0094e5b3    or      a1, s1, s1              a1 &lt;- 181
+&gt;   7404: 40800433    neg     s0, s0                  s0 &lt;- -181
+&gt;   7408: 00a365b3    or      a1, t1, a0              a1 &lt;- -329
+&gt;   7412: 00656433    or      s0, a0, t1              s0 &lt;- -329
+&gt;   7416: 40500533    neg     a0, t0                  a0 &lt;- 181
+&gt;   7420: 0055c5b3    xor     a1, a1, t0              a1 &lt;- 508
+&gt;   7424: 00540533    add     a0, s0, t0              a0 &lt;- -510
+&gt;   7428: 406285b3    sub     a1, t0, t1              a1 &lt;- -874
+&gt;   7432: 0064c2b3    xor     t0, s1, t1              t0 &lt;- 512
+&gt;   7436: 00b4e4b3    or      s1, s1, a1              s1 &lt;- -841
+&gt;   7440: 008462b3    or      t0, s0, s0              t0 &lt;- -329
+&gt;   7444: 00a2c2b3    xor     t0, t0, a0              t0 &lt;- 181
+&gt;   7448: 0094e2b3    or      t0, s1, s1              t0 &lt;- -841
+&gt;   7452: 0054e4b3    or      s1, s1, t0              s1 &lt;- -841
+&gt;   7456: 409282b3    sub     t0, t0, s1              t0 &lt;- 0
+&gt;   7460: 0064f4b3    and     s1, s1, t1              s1 &lt;- 181
+&gt;   7464: 40b002b3    neg     t0, a1                  t0 &lt;- 874
+&gt;   7468: 409585b3    sub     a1, a1, s1              a1 &lt;- -1055
+&gt;   7472: 405484b3    sub     s1, s1, t0              s1 &lt;- -693
+&gt;   7476: 005472b3    and     t0, s0, t0              t0 &lt;- 546
+&gt;   7480: 005485b3    add     a1, s1, t0              a1 &lt;- -147
+&gt;   7484: 40600433    neg     s0, t1                  s0 &lt;- -693
+&gt;   7488: 009462b3    or      t0, s0, s1              t0 &lt;- -693
+&gt;   7492: 409005b3    neg     a1, s1                  a1 &lt;- 693
+&gt;   7496: 0095e533    or      a0, a1, s1              a0 &lt;- -1
+&gt;   7500: 00a2c2b3    xor     t0, t0, a0              t0 &lt;- 692
+&gt;   7504: 0052f333    and     t1, t0, t0              t1 &lt;- 692
+&gt;   7508: 40b585b3    sub     a1, a1, a1              a1 &lt;- 0
+&gt;   7512: 406005b3    neg     a1, t1                  a1 &lt;- -692
+&gt;   7516: 0052f533    and     a0, t0, t0              a0 &lt;- 692
+&gt;   7520: 00a28433    add     s0, t0, a0              s0 &lt;- 1384
+&gt;   7524: 00a5f433    and     s0, a1, a0              s0 &lt;- 4
+&gt;   7528: 00a44433    xor     s0, s0, a0              s0 &lt;- 688
+&gt;   7532: 40b004b3    neg     s1, a1                  s1 &lt;- 692
+&gt;   7536: 00a5c2b3    xor     t0, a1, a0              t0 &lt;- -8
+&gt;   7540: 00950533    add     a0, a0, s1              a0 &lt;- 1384
+&gt;   7544: 0055e433    or      s0, a1, t0              s0 &lt;- -4
+&gt;   7548: 005365b3    or      a1, t1, t0              a1 &lt;- -4
+&gt;   7552: 009575b3    and     a1, a0, s1              a1 &lt;- 32
+&gt;   7556: 00b504b3    add     s1, a0, a1              s1 &lt;- 1416
+&gt;   7560: 00630433    add     s0, t1, t1              s0 &lt;- 1384
+&gt;   7564: 408482b3    sub     t0, s1, s0              t0 &lt;- 32
+&gt;   7568: 00a474b3    and     s1, s0, a0              s1 &lt;- 1384
+486,513c847,896
+&lt;   7596: 005474b3    and     zero, t0, s0            zero &lt;- 18
+&lt;   7600: 00b44433    xor     zero, a1, s0            zero &lt;- 925
+&lt;   7604: 40558533      7608: 009544b3    xor     zero, s1, a0            zero &lt;- -18
+&lt;   7612: 00a50533      7616: 40b28433      7620: 00648533      7624: 0092c5b3    xor     zero, s1, t0            zero &lt;- -1521
+&lt;   7628: 40900433      7632: 00a28433      7636: 40858433      7640: 406405b3      7644: 408504b3      7648: 0052f333    and     zero, t0, t0            zero &lt;- 215
+&lt;   7652: 00a4f2b3    and     zero, a0, s1            zero &lt;- 16
+&lt;   7656: 40600533      7660: 0084f5b3    and     zero, s0, s1            zero &lt;- -1520
+&lt;   7664: 0085c2b3    xor     zero, s0, a1            zero &lt;- 925
+&lt;   7668: 0062f333    and     zero, t1, t0            zero &lt;- 150
+&lt;   7672: 00b2f5b3    and     zero, a1, t0            zero &lt;- 135
+&lt;   7676: 00b34533    xor     zero, a1, t1            zero &lt;- -455
+&lt;   7680: 40900533      7684: 00a4e433    or      zero, a0, s1            zero &lt;- -2
+&lt;   7688: 40948533      7692: 00b374b3    and     zero, a1, t1            zero &lt;- 390
+&lt;   7696: 405484b3      7700: 00a46333    or      zero, a0, s0            zero &lt;- -202
+&lt;   7704: 0095c533    xor     zero, s1, a1            zero &lt;- 855
+&lt;   7708: 0062c433    xor     zero, t1, t0            zero &lt;- 1889
+&lt;   7712: 40848333      7716: 00644433    xor     zero, t1, s0            zero &lt;- -604
+&lt;   7720: 00a2e533    or      zero, a0, t0            zero &lt;- 1527
+&lt;   7724: 406002b3      7728: 00a342b3    xor     zero, a0, t1            zero &lt;- 640
+&lt;   7732: 40600333      7736: 40500433      7740: 008302b3      7744: 40a005b3      7748: 008485b3      7752: 00957433    and     zero, s1, a0            zero &lt;- 16
+&lt;   7756: 0094f2b3    and     zero, s1, s1            zero &lt;- -1320
+&lt;   7760: 00b4f533    and     zero, a1, s1            zero &lt;- -1912
+&lt;   7764: 40b28333      7768: 00957333    and     zero, s1, a0            zero &lt;- 16
+&lt;   7772: 40a30433      7776: 0094c433    xor     zero, s1, s1            zero &lt;- 0
+&lt;   7780: 00a344b3    xor     zero, a0, t1            zero &lt;- 640
+&lt;   7784: 00b462b3    or      zero, a1, s0            zero &lt;- -1121
+&lt;   7788: 00634533    xor     zero, t1, t1            zero &lt;- 0
+&lt;   7792: 008444b3    xor     zero, s0, s0            zero &lt;- 0
+---
+&gt;   7596: 005474b3    and     s1, s0, t0              s1 &lt;- 18
+&gt;   7600: 00b44433    xor     s0, s0, a1              s0 &lt;- 925
+&gt;   7604: 40558533    sub     a0, a1, t0              a0 &lt;- -1864
+&gt;   7608: 009544b3    xor     s1, a0, s1              s1 &lt;- -1878
+&gt;   7612: 00a50533    add     a0, a0, a0              a0 &lt;- -3728
+&gt;   7616: 40b28433    sub     s0, t0, a1              s0 &lt;- 1864
+&gt;   7620: 00648533    add     a0, s1, t1              a0 &lt;- 96
+&gt;   7624: 0092c5b3    xor     a1, t0, s1              a1 &lt;- -1923
+&gt;   7628: 40900433    neg     s0, s1                  s0 &lt;- 1878
+&gt;   7632: 00a28433    add     s0, t0, a0              s0 &lt;- 311
+&gt;   7636: 40858433    sub     s0, a1, s0              s0 &lt;- -2234
+&gt;   7640: 406405b3    sub     a1, s0, t1              a1 &lt;- -4208
+&gt;   7644: 408504b3    sub     s1, a0, s0              s1 &lt;- 2330
+&gt;   7648: 0052f333    and     t1, t0, t0              t1 &lt;- 215
+&gt;   7652: 00a4f2b3    and     t0, s1, a0              t0 &lt;- 0
+&gt;   7656: 40600533    neg     a0, t1                  a0 &lt;- -215
+&gt;   7660: 0084f5b3    and     a1, s1, s0              a1 &lt;- 258
+&gt;   7664: 0085c2b3    xor     t0, a1, s0              t0 &lt;- -2492
+&gt;   7668: 0062f333    and     t1, t0, t1              t1 &lt;- 68
+&gt;   7672: 00b2f5b3    and     a1, t0, a1              a1 &lt;- 0
+&gt;   7676: 00b34533    xor     a0, t1, a1              a0 &lt;- 68
+&gt;   7680: 40900533    neg     a0, s1                  a0 &lt;- -2330
+&gt;   7684: 00a4e433    or      s0, s1, a0              s0 &lt;- -2
+&gt;   7688: 40948533    sub     a0, s1, s1              a0 &lt;- 0
+&gt;   7692: 00b374b3    and     s1, t1, a1              s1 &lt;- 0
+&gt;   7696: 405484b3    sub     s1, s1, t0              s1 &lt;- 2492
+&gt;   7700: 00a46333    or      t1, s0, a0              t1 &lt;- -2
+&gt;   7704: 0095c533    xor     a0, a1, s1              a0 &lt;- 2492
+&gt;   7708: 0062c433    xor     s0, t0, t1              s0 &lt;- 2490
+&gt;   7712: 40848333    sub     t1, s1, s0              t1 &lt;- 2
+&gt;   7716: 00644433    xor     s0, s0, t1              s0 &lt;- 2488
+&gt;   7720: 00a2e533    or      a0, t0, a0              a0 &lt;- -4
+&gt;   7724: 406002b3    neg     t0, t1                  t0 &lt;- -2
+&gt;   7728: 00a342b3    xor     t0, t1, a0              t0 &lt;- -2
+&gt;   7732: 40600333    neg     t1, t1                  t1 &lt;- -2
+&gt;   7736: 40500433    neg     s0, t0                  s0 &lt;- 2
+&gt;   7740: 008302b3    add     t0, t1, s0              t0 &lt;- 0
+&gt;   7744: 40a005b3    neg     a1, a0                  a1 &lt;- 4
+&gt;   7748: 008485b3    add     a1, s1, s0              a1 &lt;- 2494
+&gt;   7752: 00957433    and     s0, a0, s1              s0 &lt;- 2492
+&gt;   7756: 0094f2b3    and     t0, s1, s1              t0 &lt;- 2492
+&gt;   7760: 00b4f533    and     a0, s1, a1              a0 &lt;- 2492
+&gt;   7764: 40b28333    sub     t1, t0, a1              t1 &lt;- -2
+&gt;   7768: 00957333    and     t1, a0, s1              t1 &lt;- 2492
+&gt;   7772: 40a30433    sub     s0, t1, a0              s0 &lt;- 0
+&gt;   7776: 0094c433    xor     s0, s1, s1              s0 &lt;- 0
+&gt;   7780: 00a344b3    xor     s1, t1, a0              s1 &lt;- 0
+&gt;   7784: 00b462b3    or      t0, s0, a1              t0 &lt;- 2494
+&gt;   7788: 00634533    xor     a0, t1, t1              a0 &lt;- 0
+&gt;   7792: 008444b3    xor     s1, s0, s0              s1 &lt;- 0
+520,547c903,952
+&lt;   7820: 0052c4b3    xor     zero, t0, t0            zero &lt;- 0
+&lt;   7824: 0092c533    xor     zero, s1, t0            zero &lt;- 1169
+&lt;   7828: 00654333    xor     zero, t1, a0            zero &lt;- 244
+&lt;   7832: 406485b3      7836: 00a5e333    or      zero, a0, a1            zero &lt;- -1155
+&lt;   7840: 40b284b3      7844: 0094c4b3    xor     zero, s1, s1            zero &lt;- 0
+&lt;   7848: 0092e5b3    or      zero, s1, t0            zero &lt;- -865
+&lt;   7852: 40b504b3      7856: 409504b3      7860: 405484b3      7864: 0085c5b3    xor     zero, s0, a1            zero &lt;- 1912
+&lt;   7868: 0095f433    and     zero, s1, a1            zero &lt;- 24
+&lt;   7872: 0065e4b3    or      zero, t1, a1            zero &lt;- -1127
+&lt;   7876: 005562b3    or      zero, t0, a0            zero &lt;- -1297
+&lt;   7880: 40a004b3      7884: 40b002b3      7888: 00a365b3    or      zero, a0, t1            zero &lt;- -1283
+&lt;   7892: 40b50333      7896: 005475b3    and     zero, t0, s0            zero &lt;- 1
+&lt;   7900: 00550433      7904: 0095e433    or      zero, s1, a1            zero &lt;- -225
+&lt;   7908: 0062e333    or      zero, t1, t0            zero &lt;- -1377
+&lt;   7912: 40a00533      7916: 406582b3      7920: 00b4e333    or      zero, a1, s1            zero &lt;- -225
+&lt;   7924: 0092c5b3    xor     zero, s1, t0            zero &lt;- 1169
+&lt;   7928: 00a47333    and     zero, a0, s0            zero &lt;- 97
+&lt;   7932: 005502b3      7936: 00b365b3    or      zero, a1, t1            zero &lt;- -1127
+&lt;   7940: 00b57533    and     zero, a1, a0            zero &lt;- 521
+&lt;   7944: 009284b3      7948: 005282b3      7952: 0082c333    xor     zero, s0, t0            zero &lt;- -786
+&lt;   7956: 00930333      7960: 0054e2b3    or      zero, t0, s1            zero &lt;- -865
+&lt;   7964: 005465b3    or      zero, t0, s0            zero &lt;- -785
+&lt;   7968: 00a47433    and     zero, a0, s0            zero &lt;- 97
+&lt;   7972: 40a282b3      7976: 40a28333      7980: 406505b3      7984: 00a40333      7988: 0095f533    and     zero, s1, a1            zero &lt;- 24
+&lt;   7992: 006282b3      7996: 40a004b3      8000: 00844433    xor     zero, s0, s0            zero &lt;- 0
+&lt;   8004: 408304b3      8008: 0062e433    or      zero, t1, t0            zero &lt;- -1377
+&lt;   8012: 00954333    xor     zero, s1, a0            zero &lt;- 1651
+&lt;   8016: 00b2e533    or      zero, a1, t0            zero &lt;- -1121
+---
+&gt;   7820: 0052c4b3    xor     s1, t0, t0              s1 &lt;- 0
+&gt;   7824: 0092c533    xor     a0, t0, s1              a0 &lt;- -1905
+&gt;   7828: 00654333    xor     t1, a0, t1              t1 &lt;- 534
+&gt;   7832: 406485b3    sub     a1, s1, t1              a1 &lt;- -534
+&gt;   7836: 00a5e333    or      t1, a1, a0              t1 &lt;- -529
+&gt;   7840: 40b284b3    sub     s1, t0, a1              s1 &lt;- -1371
+&gt;   7844: 0094c4b3    xor     s1, s1, s1              s1 &lt;- 0
+&gt;   7848: 0092e5b3    or      a1, t0, s1              a1 &lt;- -1905
+&gt;   7852: 40b504b3    sub     s1, a0, a1              s1 &lt;- 0
+&gt;   7856: 409504b3    sub     s1, a0, s1              s1 &lt;- -1905
+&gt;   7860: 405484b3    sub     s1, s1, t0              s1 &lt;- 0
+&gt;   7864: 0085c5b3    xor     a1, a1, s0              a1 &lt;- -786
+&gt;   7868: 0095f433    and     s0, a1, s1              s0 &lt;- 0
+&gt;   7872: 0065e4b3    or      s1, a1, t1              s1 &lt;- -529
+&gt;   7876: 005562b3    or      t0, a0, t0              t0 &lt;- -1905
+&gt;   7880: 40a004b3    neg     s1, a0                  s1 &lt;- 1905
+&gt;   7884: 40b002b3    neg     t0, a1                  t0 &lt;- 786
+&gt;   7888: 00a365b3    or      a1, t1, a0              a1 &lt;- -529
+&gt;   7892: 40b50333    sub     t1, a0, a1              t1 &lt;- -1376
+&gt;   7896: 005475b3    and     a1, s0, t0              a1 &lt;- 0
+&gt;   7900: 00550433    add     s0, a0, t0              s0 &lt;- -1119
+&gt;   7904: 0095e433    or      s0, a1, s1              s0 &lt;- 1905
+&gt;   7908: 0062e333    or      t1, t0, t1              t1 &lt;- -1102
+&gt;   7912: 40a00533    neg     a0, a0                  a0 &lt;- 1905
+&gt;   7916: 406582b3    sub     t0, a1, t1              t0 &lt;- 1102
+&gt;   7920: 00b4e333    or      t1, s1, a1              t1 &lt;- 1905
+&gt;   7924: 0092c5b3    xor     a1, t0, s1              a1 &lt;- 831
+&gt;   7928: 00a47333    and     t1, s0, a0              t1 &lt;- 1905
+&gt;   7932: 005502b3    add     t0, a0, t0              t0 &lt;- 3007
+&gt;   7936: 00b365b3    or      a1, t1, a1              a1 &lt;- 1919
+&gt;   7940: 00b57533    and     a0, a0, a1              a0 &lt;- 1905
+&gt;   7944: 009284b3    add     s1, t0, s1              s1 &lt;- 4912
+&gt;   7948: 005282b3    add     t0, t0, t0              t0 &lt;- 6014
+&gt;   7952: 0082c333    xor     t1, t0, s0              t1 &lt;- 4111
+&gt;   7956: 00930333    add     t1, t1, s1              t1 &lt;- 9023
+&gt;   7960: 0054e2b3    or      t0, s1, t0              t0 &lt;- 6014
+&gt;   7964: 005465b3    or      a1, s0, t0              a1 &lt;- 6015
+&gt;   7968: 00a47433    and     s0, s0, a0              s0 &lt;- 1905
+&gt;   7972: 40a282b3    sub     t0, t0, a0              t0 &lt;- 4109
+&gt;   7976: 40a28333    sub     t1, t0, a0              t1 &lt;- 2204
+&gt;   7980: 406505b3    sub     a1, a0, t1              a1 &lt;- -299
+&gt;   7984: 00a40333    add     t1, s0, a0              t1 &lt;- 3810
+&gt;   7988: 0095f533    and     a0, a1, s1              a0 &lt;- 4624
+&gt;   7992: 006282b3    add     t0, t0, t1              t0 &lt;- 7919
+&gt;   7996: 40a004b3    neg     s1, a0                  s1 &lt;- -4624
+&gt;   8000: 00844433    xor     s0, s0, s0              s0 &lt;- 0
+&gt;   8004: 408304b3    sub     s1, t1, s0              s1 &lt;- 3810
+&gt;   8008: 0062e433    or      s0, t0, t1              s0 &lt;- 7919
+&gt;   8012: 00954333    xor     t1, a0, s1              t1 &lt;- 7410
+&gt;   8016: 00b2e533    or      a0, t0, a1              a0 &lt;- -257
+554,573c959,1008
+&lt;   8044: 00a50333      8048: 00956333    or      zero, s1, a0            zero &lt;- -1
+&lt;   8052: 00b46433    or      zero, a1, s0            zero &lt;- -1282
+&lt;   8056: 0064f433    and     zero, t1, s1            zero &lt;- 388
+&lt;   8060: 00a37433    and     zero, a0, t1            zero &lt;- 201
+&lt;   8064: 40b00333      8068: 40b40333      8072: 40648533      8076: 008485b3      8080: 00b585b3      8084: 40b48433      8088: 005302b3      8092: 00a4f333    and     zero, a0, s1            zero &lt;- 640
+&lt;   8096: 00b462b3    or      zero, a1, s0            zero &lt;- -1282
+&lt;   8100: 40a005b3      8104: 006282b3      8108: 008285b3      8112: 0085e2b3    or      zero, s0, a1            zero &lt;- -1282
+&lt;   8116: 40950333      8120: 40a58333      8124: 0065e2b3    or      zero, t1, a1            zero &lt;- -1571
+&lt;   8128: 40528533      8132: 409284b3      8136: 00b5c533    xor     zero, a1, a1            zero &lt;- 0
+&lt;   8140: 409002b3      8144: 0082f4b3    and     zero, s0, t0            zero &lt;- -1488
+&lt;   8148: 00a544b3    xor     zero, a0, a0            zero &lt;- 0
+&lt;   8152: 0055c2b3    xor     zero, t0, a1            zero &lt;- 1961
+&lt;   8156: 006464b3    or      zero, t1, s0            zero &lt;- -1025
+&lt;   8160: 405004b3      8164: 405005b3      8168: 00547433    and     zero, t0, s0            zero &lt;- -1488
+&lt;   8172: 006584b3      8176: 406505b3      8180: 40530333      8184: 00a2e2b3    or      zero, a0, t0            zero &lt;- -5
+&lt;   8188: 40a504b3      8192: 00a5e2b3    or      zero, a0, a1            zero &lt;- -1317
+&lt;   8196: 409504b3      8200: 40a00433      8204: 00a58433      8208: 006505b3      8212: 00954333    xor     zero, s1, a0            zero &lt;- -641
+&lt;   8216: 00a4e2b3    or      zero, a0, s1            zero &lt;- -1
+&lt;   8220: 005582b3      8224: 40558433      8228: 00b285b3      8232: 408002b3      8236: 00a2f533    and     zero, a0, t0            zero &lt;- -1471
+&lt;   8240: 0092f5b3    and     zero, s1, t0            zero &lt;- 1840
+---
+&gt;   8044: 00a50333    add     t1, a0, a0              t1 &lt;- -2666
+&gt;   8048: 00956333    or      t1, a0, s1              t1 &lt;- -1
+&gt;   8052: 00b46433    or      s0, s0, a1              s0 &lt;- -1282
+&gt;   8056: 0064f433    and     s0, s1, t1              s0 &lt;- 1972
+&gt;   8060: 00a37433    and     s0, t1, a0              s0 &lt;- -1333
+&gt;   8064: 40b00333    neg     t1, a1                  t1 &lt;- 1832
+&gt;   8068: 40b40333    sub     t1, s0, a1              t1 &lt;- 499
+&gt;   8072: 40648533    sub     a0, s1, t1              a0 &lt;- 1473
+&gt;   8076: 008485b3    add     a1, s1, s0              a1 &lt;- 639
+&gt;   8080: 00b585b3    add     a1, a1, a1              a1 &lt;- 1278
+&gt;   8084: 40b48433    sub     s0, s1, a1              s0 &lt;- 694
+&gt;   8088: 005302b3    add     t0, t1, t0              t0 &lt;- 356
+&gt;   8092: 00a4f333    and     t1, s1, a0              t1 &lt;- 1408
+&gt;   8096: 00b462b3    or      t0, s0, a1              t0 &lt;- 1790
+&gt;   8100: 40a005b3    neg     a1, a0                  a1 &lt;- -1473
+&gt;   8104: 006282b3    add     t0, t0, t1              t0 &lt;- 3198
+&gt;   8108: 008285b3    add     a1, t0, s0              a1 &lt;- 3892
+&gt;   8112: 0085e2b3    or      t0, a1, s0              t0 &lt;- 4022
+&gt;   8116: 40950333    sub     t1, a0, s1              t1 &lt;- -499
+&gt;   8120: 40a58333    sub     t1, a1, a0              t1 &lt;- 2419
+&gt;   8124: 0065e2b3    or      t0, a1, t1              t0 &lt;- 3959
+&gt;   8128: 40528533    sub     a0, t0, t0              a0 &lt;- 0
+&gt;   8132: 409284b3    sub     s1, t0, s1              s1 &lt;- 1987
+&gt;   8136: 00b5c533    xor     a0, a1, a1              a0 &lt;- 0
+&gt;   8140: 409002b3    neg     t0, s1                  t0 &lt;- -1987
+&gt;   8144: 0082f4b3    and     s1, t0, s0              s1 &lt;- 52
+&gt;   8148: 00a544b3    xor     s1, a0, a0              s1 &lt;- 0
+&gt;   8152: 0055c2b3    xor     t0, a1, t0              t0 &lt;- -2295
+&gt;   8156: 006464b3    or      s1, s0, t1              s1 &lt;- 3063
+&gt;   8160: 405004b3    neg     s1, t0                  s1 &lt;- 2295
+&gt;   8164: 405005b3    neg     a1, t0                  a1 &lt;- 2295
+&gt;   8168: 00547433    and     s0, s0, t0              s0 &lt;- 512
+&gt;   8172: 006584b3    add     s1, a1, t1              s1 &lt;- 4714
+&gt;   8176: 406505b3    sub     a1, a0, t1              a1 &lt;- -2419
+&gt;   8180: 40530333    sub     t1, t1, t0              t1 &lt;- 4714
+&gt;   8184: 00a2e2b3    or      t0, t0, a0              t0 &lt;- -2295
+&gt;   8188: 40a504b3    sub     s1, a0, a0              s1 &lt;- 0
+&gt;   8192: 00a5e2b3    or      t0, a1, a0              t0 &lt;- -2419
+&gt;   8196: 409504b3    sub     s1, a0, s1              s1 &lt;- 0
+&gt;   8200: 40a00433    neg     s0, a0                  s0 &lt;- 0
+&gt;   8204: 00a58433    add     s0, a1, a0              s0 &lt;- -2419
+&gt;   8208: 006505b3    add     a1, a0, t1              a1 &lt;- 4714
+&gt;   8212: 00954333    xor     t1, a0, s1              t1 &lt;- 0
+&gt;   8216: 00a4e2b3    or      t0, s1, a0              t0 &lt;- 0
+&gt;   8220: 005582b3    add     t0, a1, t0              t0 &lt;- 4714
+&gt;   8224: 40558433    sub     s0, a1, t0              s0 &lt;- 0
+&gt;   8228: 00b285b3    add     a1, t0, a1              a1 &lt;- 9428
+&gt;   8232: 408002b3    neg     t0, s0                  t0 &lt;- 0
+&gt;   8236: 00a2f533    and     a0, t0, a0              a0 &lt;- 0
+&gt;   8240: 0092f5b3    and     a1, t0, s1              a1 &lt;- 0
+580,606c1015,1065
+&lt;   8268: 40b485b3      8272: 405004b3      8276: 40b584b3      8280: 0094e533    or      zero, s1, s1            zero &lt;- -1806
+&lt;   8284: 00b54433    xor     zero, a1, a0            zero &lt;- 1176
+&lt;   8288: 00647333    and     zero, t1, s0            zero &lt;- 26
+&lt;   8292: 40628333      8296: 0055f533    and     zero, t0, a1            zero &lt;- 544
+&lt;   8300: 00b404b3      8304: 009545b3    xor     zero, s1, a0            zero &lt;- -1388
+&lt;   8308: 0095e433    or      zero, s1, a1            zero &lt;- -258
+&lt;   8312: 40900433      8316: 008444b3    xor     zero, s0, s0            zero &lt;- 0
+&lt;   8320: 00a30433      8324: 00634533    xor     zero, t1, t1            zero &lt;- 0
+&lt;   8328: 00b362b3    or      zero, a1, t1            zero &lt;- 1791
+&lt;   8332: 409484b3      8336: 40830433      8340: 00b46433    or      zero, a1, s0            zero &lt;- 1790
+&lt;   8344: 00a37433    and     zero, a0, t1            zero &lt;- 6
+&lt;   8348: 008305b3      8352: 40658333      8356: 008285b3      8360: 40b48433      8364: 00b5e5b3    or      zero, a1, a1            zero &lt;- 1790
+&lt;   8368: 406284b3      8372: 0082c433    xor     zero, s0, t0            zero &lt;- -1957
+&lt;   8376: 00544533    xor     zero, t0, s0            zero &lt;- -1957
+&lt;   8380: 008574b3    and     zero, s0, a0            zero &lt;- 610
+&lt;   8384: 006575b3    and     zero, t1, a0            zero &lt;- 6
+&lt;   8388: 40b585b3      8392: 0054e4b3    or      zero, t0, s1            zero &lt;- -1293
+&lt;   8396: 008442b3    xor     zero, s0, s0            zero &lt;- 0
+&lt;   8400: 409504b3      8404: 00554533    xor     zero, t0, a0            zero &lt;- -1977
+&lt;   8408: 0092f333    and     zero, s1, t0            zero &lt;- -2016
+&lt;   8412: 006574b3    and     zero, t1, a0            zero &lt;- 6
+&lt;   8416: 00a58333      8420: 0054f2b3    and     zero, t0, s1            zero &lt;- -2016
+&lt;   8424: 40600433      8428: 00646333    or      zero, t1, s0            zero &lt;- 1663
+&lt;   8432: 40800433      8436: 40b00333      8440: 40900433      8444: 40b004b3      8448: 00b5e433    or      zero, a1, a1            zero &lt;- 1790
+&lt;   8452: 40840433      8456: 0055f5b3    and     zero, t0, a1            zero &lt;- 544
+&lt;   8460: 0082f2b3    and     zero, s0, t0            zero &lt;- 544
+&lt;   8464: 405582b3      8468: 17d00513    li      a0, 381                 a0 &lt;- 381
+---
+&gt;   8268: 40b485b3    sub     a1, s1, a1              a1 &lt;- -3596
+&gt;   8272: 405004b3    neg     s1, t0                  s1 &lt;- 1503
+&gt;   8276: 40b584b3    sub     s1, a1, a1              s1 &lt;- 0
+&gt;   8280: 0094e533    or      a0, s1, s1              a0 &lt;- 0
+&gt;   8284: 00b54433    xor     s0, a0, a1              s0 &lt;- -3596
+&gt;   8288: 00647333    and     t1, s0, t1              t1 &lt;- 20
+&gt;   8292: 40628333    sub     t1, t0, t1              t1 &lt;- -1523
+&gt;   8296: 0055f533    and     a0, a1, t0              a0 &lt;- -4064
+&gt;   8300: 00b404b3    add     s1, s0, a1              s1 &lt;- -7192
+&gt;   8304: 009545b3    xor     a1, a0, s1              a1 &lt;- 5064
+&gt;   8308: 0095e433    or      s0, a1, s1              s0 &lt;- -3096
+&gt;   8312: 40900433    neg     s0, s1                  s0 &lt;- 7192
+&gt;   8316: 008444b3    xor     s1, s0, s0              s1 &lt;- 0
+&gt;   8320: 00a30433    add     s0, t1, a0              s0 &lt;- -5587
+&gt;   8324: 00634533    xor     a0, t1, t1              a0 &lt;- 0
+&gt;   8328: 00b362b3    or      t0, t1, a1              t0 &lt;- -1075
+&gt;   8332: 409484b3    sub     s1, s1, s1              s1 &lt;- 0
+&gt;   8336: 40830433    sub     s0, t1, s0              s0 &lt;- 4064
+&gt;   8340: 00b46433    or      s0, s0, a1              s0 &lt;- 8168
+&gt;   8344: 00a37433    and     s0, t1, a0              s0 &lt;- 0
+&gt;   8348: 008305b3    add     a1, t1, s0              a1 &lt;- -1523
+&gt;   8352: 40658333    sub     t1, a1, t1              t1 &lt;- 0
+&gt;   8356: 008285b3    add     a1, t0, s0              a1 &lt;- -1075
+&gt;   8360: 40b48433    sub     s0, s1, a1              s0 &lt;- 1075
+&gt;   8364: 00b5e5b3    or      a1, a1, a1              a1 &lt;- -1075
+&gt;   8368: 406284b3    sub     s1, t0, t1              s1 &lt;- -1075
+&gt;   8372: 0082c433    xor     s0, t0, s0              s0 &lt;- -2
+&gt;   8376: 00544533    xor     a0, s0, t0              a0 &lt;- 1075
+&gt;   8380: 008574b3    and     s1, a0, s0              s1 &lt;- 1074
+&gt;   8384: 006575b3    and     a1, a0, t1              a1 &lt;- 0
+&gt;   8388: 40b585b3    sub     a1, a1, a1              a1 &lt;- 0
+&gt;   8392: 0054e4b3    or      s1, s1, t0              s1 &lt;- -1
+&gt;   8396: 008442b3    xor     t0, s0, s0              t0 &lt;- 0
+&gt;   8400: 409504b3    sub     s1, a0, s1              s1 &lt;- 1076
+&gt;   8404: 00554533    xor     a0, a0, t0              a0 &lt;- 1075
+&gt;   8408: 0092f333    and     t1, t0, s1              t1 &lt;- 0
+&gt;   8412: 006574b3    and     s1, a0, t1              s1 &lt;- 0
+&gt;   8416: 00a58333    add     t1, a1, a0              t1 &lt;- 1075
+&gt;   8420: 0054f2b3    and     t0, s1, t0              t0 &lt;- 0
+&gt;   8424: 40600433    neg     s0, t1                  s0 &lt;- -1075
+&gt;   8428: 00646333    or      t1, s0, t1              t1 &lt;- -1
+&gt;   8432: 40800433    neg     s0, s0                  s0 &lt;- 1075
+&gt;   8436: 40b00333    neg     t1, a1                  t1 &lt;- 0
+&gt;   8440: 40900433    neg     s0, s1                  s0 &lt;- 0
+&gt;   8444: 40b004b3    neg     s1, a1                  s1 &lt;- 0
+&gt;   8448: 00b5e433    or      s0, a1, a1              s0 &lt;- 0
+&gt;   8452: 40840433    sub     s0, s0, s0              s0 &lt;- 0
+&gt;   8456: 0055f5b3    and     a1, a1, t0              a1 &lt;- 0
+&gt;   8460: 0082f2b3    and     t0, t0, s0              t0 &lt;- 0
+&gt;   8464: 405582b3    sub     t0, a1, t0              t0 &lt;- 0
+&gt;   8468: 17d00513    li      a0, 381                 a0 &lt;- 381
+612,637c1071,1120
+&lt;   8492: 0095e533    or      zero, s1, a1            zero &lt;- 1451
+&lt;   8496: 0065e5b3    or      zero, t1, a1            zero &lt;- -775
+&lt;   8500: 00934533    xor     zero, s1, t1            zero &lt;- -1550
+&lt;   8504: 40a582b3      8508: 405305b3      8512: 405002b3      8516: 00640433      8520: 00536433    or      zero, t0, t1            zero &lt;- -816
+&lt;   8524: 00a2e2b3    or      zero, a0, t0            zero &lt;- 381
+&lt;   8528: 408002b3      8532: 40b00333      8536: 00b4e4b3    or      zero, a1, s1            zero &lt;- 1451
+&lt;   8540: 00a56333    or      zero, a0, a0            zero &lt;- 381
+&lt;   8544: 405505b3      8548: 40b30533      8552: 40600333      8556: 005484b3      8560: 009442b3    xor     zero, s1, s0            zero &lt;- 1688
+&lt;   8564: 00a572b3    and     zero, a0, a0            zero &lt;- 381
+&lt;   8568: 40858533      8572: 00854433    xor     zero, s0, a0            zero &lt;- 711
+&lt;   8576: 009442b3    xor     zero, s1, s0            zero &lt;- 1688
+&lt;   8580: 0084c4b3    xor     zero, s0, s1            zero &lt;- 1688
+&lt;   8584: 00a484b3      8588: 00a4f2b3    and     zero, a0, s1            zero &lt;- 288
+&lt;   8592: 40530333      8596: 00954533    xor     zero, s1, a0            zero &lt;- 1119
+&lt;   8600: 40a305b3      8604: 006444b3    xor     zero, t1, s0            zero &lt;- -150
+&lt;   8608: 40a004b3      8612: 40500533      8616: 0064f2b3    and     zero, t1, s1            zero &lt;- 1024
+&lt;   8620: 00858433      8624: 009362b3    or      zero, s1, t1            zero &lt;- -526
+&lt;   8628: 00657333    and     zero, t1, a0            zero &lt;- 80
+&lt;   8632: 006285b3      8636: 40900533      8640: 00b56333    or      zero, a1, a0            zero &lt;- 509
+&lt;   8644: 406004b3      8648: 00630433      8652: 40b28533      8656: 00b36433    or      zero, a1, t1            zero &lt;- -775
+&lt;   8660: 0054c333    xor     zero, t0, s1            zero &lt;- 1314
+&lt;   8664: 40958533      8668: 00a365b3    or      zero, a0, t1            zero &lt;- -515
+&lt;   8672: 40830333      8676: 00b475b3    and     zero, a1, s0            zero &lt;- 168
+&lt;   8680: 0092e533    or      zero, s1, t0            zero &lt;- 1314
+&lt;   8684: 00536433    or      zero, t0, t1            zero &lt;- -816
+&lt;   8688: 0092c433    xor     zero, s1, t0            zero &lt;- 1314
+---
+&gt;   8492: 0095e533    or      a0, a1, s1              a0 &lt;- 1451
+&gt;   8496: 0065e5b3    or      a1, a1, t1              a1 &lt;- -775
+&gt;   8500: 00934533    xor     a0, t1, s1              a0 &lt;- -1550
+&gt;   8504: 40a582b3    sub     t0, a1, a0              t0 &lt;- 775
+&gt;   8508: 405305b3    sub     a1, t1, t0              a1 &lt;- -1591
+&gt;   8512: 405002b3    neg     t0, t0                  t0 &lt;- -775
+&gt;   8516: 00640433    add     s0, s0, t1              s0 &lt;- 138
+&gt;   8520: 00536433    or      s0, t1, t0              s0 &lt;- -775
+&gt;   8524: 00a2e2b3    or      t0, t0, a0              t0 &lt;- -517
+&gt;   8528: 408002b3    neg     t0, s0                  t0 &lt;- 775
+&gt;   8532: 40b00333    neg     t1, a1                  t1 &lt;- 1591
+&gt;   8536: 00b4e4b3    or      s1, s1, a1              s1 &lt;- -533
+&gt;   8540: 00a56333    or      t1, a0, a0              t1 &lt;- -1550
+&gt;   8544: 405505b3    sub     a1, a0, t0              a1 &lt;- -2325
+&gt;   8548: 40b30533    sub     a0, t1, a1              a0 &lt;- 775
+&gt;   8552: 40600333    neg     t1, t1                  t1 &lt;- 1550
+&gt;   8556: 005484b3    add     s1, s1, t0              s1 &lt;- 242
+&gt;   8560: 009442b3    xor     t0, s0, s1              t0 &lt;- -1013
+&gt;   8564: 00a572b3    and     t0, a0, a0              t0 &lt;- 775
+&gt;   8568: 40858533    sub     a0, a1, s0              a0 &lt;- -1550
+&gt;   8572: 00854433    xor     s0, a0, s0              s0 &lt;- 1291
+&gt;   8576: 009442b3    xor     t0, s0, s1              t0 &lt;- 1529
+&gt;   8580: 0084c4b3    xor     s1, s1, s0              s1 &lt;- 1529
+&gt;   8584: 00a484b3    add     s1, s1, a0              s1 &lt;- -21
+&gt;   8588: 00a4f2b3    and     t0, s1, a0              t0 &lt;- -1566
+&gt;   8592: 40530333    sub     t1, t1, t0              t1 &lt;- 3116
+&gt;   8596: 00954533    xor     a0, a0, s1              a0 &lt;- 1561
+&gt;   8600: 40a305b3    sub     a1, t1, a0              a1 &lt;- 1555
+&gt;   8604: 006444b3    xor     s1, s0, t1              s1 &lt;- 2343
+&gt;   8608: 40a004b3    neg     s1, a0                  s1 &lt;- -1561
+&gt;   8612: 40500533    neg     a0, t0                  a0 &lt;- 1566
+&gt;   8616: 0064f2b3    and     t0, s1, t1              t0 &lt;- 2084
+&gt;   8620: 00858433    add     s0, a1, s0              s0 &lt;- 2846
+&gt;   8624: 009362b3    or      t0, t1, s1              t0 &lt;- -529
+&gt;   8628: 00657333    and     t1, a0, t1              t1 &lt;- 1036
+&gt;   8632: 006285b3    add     a1, t0, t1              a1 &lt;- 507
+&gt;   8636: 40900533    neg     a0, s1                  a0 &lt;- 1561
+&gt;   8640: 00b56333    or      t1, a0, a1              t1 &lt;- 2043
+&gt;   8644: 406004b3    neg     s1, t1                  s1 &lt;- -2043
+&gt;   8648: 00630433    add     s0, t1, t1              s0 &lt;- 4086
+&gt;   8652: 40b28533    sub     a0, t0, a1              a0 &lt;- -1036
+&gt;   8656: 00b36433    or      s0, t1, a1              s0 &lt;- 2043
+&gt;   8660: 0054c333    xor     t1, s1, t0              t1 &lt;- 1514
+&gt;   8664: 40958533    sub     a0, a1, s1              a0 &lt;- 2550
+&gt;   8668: 00a365b3    or      a1, t1, a0              a1 &lt;- 3582
+&gt;   8672: 40830333    sub     t1, t1, s0              t1 &lt;- -529
+&gt;   8676: 00b475b3    and     a1, s0, a1              a1 &lt;- 1530
+&gt;   8680: 0092e533    or      a0, t0, s1              a0 &lt;- -529
+&gt;   8684: 00536433    or      s0, t1, t0              s0 &lt;- -529
+&gt;   8688: 0092c433    xor     s0, t0, s1              s0 &lt;- 1514
+
+</failure></testcase></testsuite></testsuites>

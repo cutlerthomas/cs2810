@@ -1,0 +1,184 @@
+<html><head></head><body><h2>Calculator</h2>
+
+<p>In this problem you will explore using <code>sscanf</code>. This function lets
+you scan and parse formatted text, similar to how <code>printf</code> lets you
+format text for output.</p>
+
+<p>Important reminders: you should write your code in <code>calculate.c</code>,
+and you should only write a single function. The function type
+should match the prototype in <code>main.c</code>, i.e., it should look like:</p>
+
+<pre><code>void calculate(char *line) { ... }
+</code></pre>
+
+<p>Note that you should NOT copy any code over from <code>main.c</code>. Both
+<code>main.c</code> and <code>calculate.c</code> will be compiled and linked together to
+create the final <code>a.out</code> program.</p>
+
+<p>The <code>main</code> function will read a line of input from <em>stdin</em>, which is
+the standard input. When you run a program from the command line,
+the keyboard is standard in. When you type <code>make</code> to run the tests
+for this problem, the system will feed lines of input from the input
+test file instead of the keyboard.</p>
+
+<p>The <code>calculate</code> function will be given one line of text input at a
+time. Its job is to parse the input line for a simple math problem
+(using <code>sscanf</code>), then give a printed response (using <code>printf</code>).</p>
+
+<p>Here is an example. If the user types:</p>
+
+<pre><code>What is 9 added to 12?
+</code></pre>
+
+<p>your program should respond with:</p>
+
+<pre><code>9 + 12 = 21
+</code></pre>
+
+<p>There are several different question formats that you must handle,
+and if the user input does not match any of them you should respond
+with:</p>
+
+<pre><code>I do not understand the question, sorry!
+</code></pre>
+
+<h3>Using sscanf</h3>
+
+<p>The <code>stdio.h</code> library has a family of <code>scanf</code> functions. <code>scanf</code>
+reads directly from the keyboard, <code>fscanf</code> reads from an open file,
+and <code>sscanf</code> (the one we are using) scans a string that is already
+in memory. You can get the full documentation for it by typing:</p>
+
+<pre><code>man sscanf
+</code></pre>
+
+<p>or a search will turn up many tutorials. The basic idea is simple:
+it works like <code>printf</code> in reverse. Here is an example:</p>
+
+<pre><code class="language-c">// an example input string:
+char *line = &#34;What is 5 added to 7?\n&#34;;
+
+// we need to capture some values, so define a few variables
+int a, b, n;
+
+// call sscanf
+n = sscanf(line, &#34;What is %d added to %d?\n&#34;, &amp;a, &amp;b);
+</code></pre>
+
+<p>Here are some notes about this code sample:</p>
+
+<ul>
+<li><p>Literal characters in the format string must exactly match
+characters from the input, so &#34;What&#34; in the <code>sscanf</code> call must
+match the exact string &#34;What&#34; from the input. If there is a
+mismatch, it stops reading and gives up.</p></li>
+
+<li><p>For <code>%d</code>, it must successfully read and parse a decimal integer
+(just like <code>printf</code> would format and print an integer). If it
+does not find a suitable value to parse, it will give up and
+stop reading.</p></li>
+
+<li><p><code>sscanf</code> returns the number of values that it successfully reads
+and converts. In this case it would parse the &#34;5&#34; and &#34;7&#34;
+strings into the integers 5 and 7, storing them in variables &#34;a&#34;
+and &#34;b&#34;, respectively, so it will return 2.</p></li>
+
+<li><p>When parsing the first integer and storing it in the variable
+&#34;a&#34;, <code>sscanf</code> needs to know where to store the value. We must
+give it a pointer to &#34;a&#34; so it can change the value of &#34;a&#34;, so
+we use the address-of operator.</p></li>
+
+<li><p>Whitespace does not have to match exactly. A space character in
+the format string will match zero or more whitespace characters
+(spaces, tabs, newlines, etc.) in the input.</p></li>
+</ul>
+
+<p>There is an added complication for our problem. Say I have the input
+string:</p>
+
+<pre><code>What is 43 negated?
+</code></pre>
+
+<p>and I try to parse it using:</p>
+
+<pre><code class="language-c">n = sscanf(line, &#34;What is %d squared?\n&#34;, &amp;a);
+</code></pre>
+
+<p>It will successfully parse the number 43 and store it in the
+variable &#34;a&#34;. Then it will try to match “negated” from the input
+with “squared” from the format string and will fail. However, it did
+parse and store a single value, so it will return 1, which is the
+same value it would have returned if the entire string was a match.
+This makes it difficult to test if the entire string was parsed
+successfully.</p>
+
+<p>Here is one way to do it:</p>
+
+<pre><code class="language-c">char nl;
+n = sscanf(line, &#34;What is %d squared?%c&#34;, &amp;a, &amp;nl);
+</code></pre>
+
+<p>The <code>%c</code> tells it to read and store a single character. Since our
+input lines always end with a newline, you can then check if the
+entire string was a match by testing two things:</p>
+
+<ol>
+<li><p>Did <code>sscanf</code> return 2 to indicate that it read and stored 2
+values (the integer and the character)?</p></li>
+
+<li><p>Is the value of the variable &#34;nl&#34; a newline character, i.e., is
+<code>nl == &#39;\n&#39;</code>? If not, there must have been some extra character
+at the end other than the expected newline.</p></li>
+</ol>
+
+<h3>How to proceed</h3>
+
+<p>Start by creating <code>calculate</code> in <code>calculate.c</code> and write code that
+only reads and understands addition problems of the form illustrated
+above. When it successfully reads a problem, have it print the
+solution using <code>printf</code>.</p>
+
+<p>Once you have done just this much, run &#34;make&#34; to test it. You should
+see output like this:</p>
+
+<pre><code>What is 6 added to 7?
+6 + 7 = 13
+What is -34 added to 102314?
+-34 + 102314 = 102280
+What is 1 added to 3??
+I do not understand the question, sorry!
+What is 5 subtracted from 7?
+
+!!INCORRECT OUTPUT!! Your next line of output was:
+&#39;I do not understand the question, sorry!\n&#39;
+but the next line of output expected was:
+&#39;7 - 5 = 2\n&#39;
+</code></pre>
+
+<p>This means that you are successfully handling addition problems
+(note that the input with two question marks was rejected) but the
+tests fail when it tries to ask about a subtraction problem. From
+the message, you should be able to see the expected format of
+subtraction problems, both what you will be given as input and what
+the expected output is.</p>
+
+<p>Based on this new example, add code to handle subtraction problems.
+If a line of input does not parse correctly as an addition problem,
+try parsing it as a subtraction problem. If it does not match the
+expected input format, print the same message as before about the
+input not being understood.</p>
+
+<p>Keep repeating this process for each new kind of question until you
+are parsing and handling all problem types.</p>
+
+<p>Note: you can also run it without the tests. To jump compile your
+program use:</p>
+
+<pre><code>make a.out
+</code></pre>
+
+<p>and then to run it use:</p>
+
+<pre><code>./a.out
+</code></pre>
+</body></html>

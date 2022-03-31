@@ -1,0 +1,58 @@
+<html><head></head><body><h2>Scoring a candidate word</h2>
+
+<p>In this step you will take a potential next guess, compare it
+against all words in the word list, and come up with a score for how
+good a guess it is. We will use a very simple scoring mechanism:</p>
+
+<ul>
+<li><p>If a word in the list is not viable according to the
+<code>is_viable_candidate</code> function, ignore it and move on to the
+next word.</p></li>
+
+<li><p>For a viable word in the list, assume it is the solution to the
+puzzle and give the guess a simple score based on that
+assumption:</p>
+
+<ul>
+<li>Give 5 points for every letter that would appear green</li>
+<li>Give 1 point for every letter that would appear yellow</li>
+<li>Give 0 points for every letter that would appear gray</li>
+</ul></li>
+
+<li><p>Repeat this test for every word in the word list and return the
+sum of all the scores.</p></li>
+</ul>
+
+<p>The scoring method is pretty unsophisticated and arbitrary,
+especially in the choice of 5 and 1 points. These constant values
+are defined in <code>wordle.h</code> and you should use <code>EXACT_HIT_POINTS</code> and
+<code>PARTIAL_HIT_POINTS</code> instead of 5 and 1, respectively.</p>
+
+<p>In the file <code>score.c</code> write the function <code>score</code> to match the
+prototype given in <code>wordle.h</code>.</p>
+
+<p>You are given the entire word list (since you need to find and score
+every viable word), the candidate guess, and the list of prior
+guesses with its count.</p>
+
+<p>Loop over the words in the word list and test each one using
+<code>is_viable_candidate</code>. If the word is not viable, skip it and move
+on. For a viable word:</p>
+
+<ul>
+<li><p>Make a local copy so you cross letters off</p></li>
+
+<li><p>Loop over the 5 positions of the candidate and look for exact
+hits (under the assumption that the copied word from the list is
+the solution). If the candidate and the copy have a match in the
+same position, cross it off the copy and add 5 to the score.</p></li>
+
+<li><p>Loop over the 5 positions again looking for partial hits. For
+each letter in the candidate, scan all 5 letters in the copy. If
+you find a match, cross it off the copy and add 1 to the score.
+Be sure to break out of the loop as well so you do not count a
+letter twice.</p></li>
+</ul>
+
+<p>Return the sum of all the scores that you find for viable words.</p>
+</body></html>
